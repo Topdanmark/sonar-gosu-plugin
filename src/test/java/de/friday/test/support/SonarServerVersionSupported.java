@@ -19,8 +19,9 @@ package de.friday.test.support;
 import org.sonar.api.utils.Version;
 
 public enum SonarServerVersionSupported {
-    VERSION_6_5(Version.create(6, 5)),
-    VERSION_7_4(Version.create(6, 5));
+    VERSION_25_1(Version.create(25, 1)),
+    VERSION_25_2(Version.create(25, 2)),
+    VERSION_25_3(Version.create(25, 3));
 
     private final Version version;
 

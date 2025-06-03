@@ -16,21 +16,22 @@
  */
 package de.friday.sonarqube.gosu.plugin.reports;
 
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.sonar.api.config.Configuration;
+import org.sonar.plugins.surefire.StaxParser;
+import org.sonar.plugins.surefire.data.UnitTestIndex;
+
+import javax.xml.stream.XMLStreamException;
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import javax.xml.stream.XMLStreamException;
-import org.apache.commons.lang3.StringUtils;
-import org.sonar.api.config.Configuration;
-import org.sonar.api.utils.log.Logger;
-import org.sonar.api.utils.log.Loggers;
-import org.sonar.plugins.surefire.StaxParser;
-import org.sonar.plugins.surefire.data.UnitTestIndex;
 
 public class ReportsScanner {
 
-    private static final Logger LOGGER = Loggers.get(ReportsScanner.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ReportsScanner.class);
     private final Configuration settings;
     private UnitTestIndex index;
 

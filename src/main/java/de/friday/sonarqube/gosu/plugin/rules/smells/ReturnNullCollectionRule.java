@@ -75,7 +75,7 @@ public class ReturnNullCollectionRule extends BaseGosuRule {
 
     @Override
     public void exitReturnStatement(GosuParser.ReturnStatementContext ctx) {
-        if (currentScope.isNotReturningCollection()) {
+        if (currentScope.isNotReturningCollection() || ctx.expression() == null) {
             return;
         }
 

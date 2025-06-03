@@ -5,6 +5,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0]
+- Updated to support SonarQube Server Community Build 25.3, Java 17, and Gradle 8.3.
+
 ## [1.2.2]
 
 ### Added

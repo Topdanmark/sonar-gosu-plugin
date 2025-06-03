@@ -16,7 +16,6 @@
  */
 package de.friday.test.support;
 
-import org.sonar.api.batch.rule.ActiveRules;
 import org.sonar.api.batch.rule.internal.ActiveRulesBuilder;
 import org.sonar.api.batch.rule.internal.NewActiveRule;
 import org.sonar.api.batch.sensor.internal.SensorContextTester;
@@ -45,13 +44,12 @@ public class GosuSensorContextTester {
     }
 
     private void activateRules(String ruleKey, SensorContextTester sensorContextTester, Map<String, String> ruleProperties) {
-        NewActiveRule newActiveRule = new ActiveRulesBuilder().create(
-                RuleKey.of("gosu", ruleKey)
-        );
-        ruleProperties.forEach(newActiveRule::setParam);
-        final ActiveRulesBuilder activeRulesBuilder = newActiveRule.activate();
-        final ActiveRules activeRules = activeRulesBuilder.build();
-        sensorContextTester.setActiveRules(activeRules);
+        NewActiveRule.Builder builder = new NewActiveRule.Builder().setRuleKey(RuleKey.of("gosu", ruleKey));
+        ruleProperties.forEach(builder::setParam);
+        NewActiveRule newActiveRule = builder.build();
+        ActiveRulesBuilder activeRulesBuilder = new ActiveRulesBuilder().addRule(newActiveRule);
+
+        sensorContextTester.setActiveRules(activeRulesBuilder.build());
     }
 
     public SensorContextTester get() {

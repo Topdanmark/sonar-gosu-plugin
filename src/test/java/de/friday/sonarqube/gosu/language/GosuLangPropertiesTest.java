@@ -18,7 +18,6 @@ package de.friday.sonarqube.gosu.language;
 
 import org.junit.jupiter.api.Test;
 import org.sonar.api.config.PropertyDefinition;
-import org.sonar.api.resources.Qualifiers;
 
 import static org.assertj.core.api.Assertions.assertThat;
 class GosuLangPropertiesTest {
@@ -26,13 +25,12 @@ class GosuLangPropertiesTest {
     @Test
     void shouldReturnGosuPropertyDefinition() {
         // when
-        final PropertyDefinition properties = GosuLangProperties.getProperties().get(0);
+        final PropertyDefinition properties = GosuLangProperties.getSuffixProperty();
 
         assertThat(properties.key()).isEqualTo("sonar.gosu.file.suffixes");
         assertThat(properties.defaultValue()).isEqualTo(".gs,.gsx");
         assertThat(properties.name()).isEqualTo("File Suffixes");
         assertThat(properties.category()).isEqualTo("Gosu");
         assertThat(properties.description()).isEqualTo("Comma-separated list of suffixes for files to analyze.");
-        assertThat(properties.qualifiers()).containsOnly(Qualifiers.PROJECT);
     }
 }

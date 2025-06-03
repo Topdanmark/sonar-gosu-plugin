@@ -20,6 +20,7 @@ Please find below the compatibility matrix of the plugin:
 |-------------------|------------------------------|
 | v8.9              | [1.0.0, 1.1.0, 1.2.0, 1.2.1] |
 | v9+               | [1.2.1, 1.2.2]               |
+| v23+              | [2.0.0]                      |
 
 ## Installation
 

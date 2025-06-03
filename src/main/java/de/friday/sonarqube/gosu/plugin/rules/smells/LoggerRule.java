@@ -19,8 +19,8 @@ package de.friday.sonarqube.gosu.plugin.rules.smells;
 import de.friday.sonarqube.gosu.antlr.GosuParser;
 import de.friday.sonarqube.gosu.plugin.issues.GosuIssue;
 import de.friday.sonarqube.gosu.plugin.rules.BaseGosuRule;
-import org.sonar.api.utils.log.Logger;
-import org.sonar.api.utils.log.Loggers;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.sonar.check.Rule;
 import org.sonar.check.RuleProperty;
 
@@ -34,7 +34,7 @@ public class LoggerRule extends BaseGosuRule {
     private static final String LOGGER = "Logger";
     private static final String GET_LOGGER = "getLogger";
     private static final String CLASS_SUFFIX = "\\.[Cc]lass";
-    private static final Logger LOG = Loggers.get(LoggerRule.class);
+    private static final Logger LOG = LoggerFactory.getLogger(LoggerRule.class);
     private static final Pattern MATCH_ALL_LOGGERS_PATTERN = Pattern.compile("\\w+");
     @RuleProperty(
             key = "format",

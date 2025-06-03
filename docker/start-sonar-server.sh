@@ -12,5 +12,5 @@ echo "------ BUILDING CUSTOM SONAR SERVER DOCKER IMAGE ------"
 echo "-------------------------------------------------------"
 
 echo "------ STARTING ------"
-docker-compose up
+docker-compose up -d
 echo "----------------------"

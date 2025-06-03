@@ -28,6 +28,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.sonar.api.batch.fs.FilePredicate;
 import org.sonar.api.batch.fs.FileSystem;
 import org.sonar.api.batch.fs.InputFile;
@@ -37,13 +39,11 @@ import org.sonar.api.batch.sensor.SensorDescriptor;
 import org.sonar.api.config.Configuration;
 import org.sonar.api.measures.FileLinesContextFactory;
 import org.sonar.api.scan.filesystem.PathResolver;
-import org.sonar.api.utils.log.Logger;
-import org.sonar.api.utils.log.Loggers;
 import org.sonar.plugins.surefire.data.UnitTestIndex;
 import org.sonarsource.analyzer.commons.ProgressReport;
 
 public class GosuSensor implements Sensor {
-    private static final Logger LOG = Loggers.get(GosuSensor.class);
+    private static final Logger LOG = LoggerFactory.getLogger(GosuSensor.class);
     private final FileSystem fileSystem;
     private final FilePredicate mainFilesPredicate;
     private final UnitTestIndex unitTestIndex;

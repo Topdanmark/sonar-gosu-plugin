@@ -1,4 +1,3 @@
-version: "3"
 services:
   sonarqube:
     image: friday:sonar-server
@@ -17,7 +16,7 @@ services:
     ports:
       - "9000:9000"
   db:
-    image: postgres:13
+    image: postgres:17
     hostname: postgresql
     container_name: postgresql
     environment:

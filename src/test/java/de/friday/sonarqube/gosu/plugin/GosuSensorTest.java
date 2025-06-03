@@ -22,7 +22,6 @@ import de.friday.test.support.TestResourcesDirectories;
 import de.friday.test.support.rules.dsl.gosu.GosuSourceCodeFile;
 import de.friday.test.support.rules.dsl.specification.SourceCodeFile;
 import de.friday.test.support.sonar.scanner.FileLinesContextFactorySpy;
-import org.jetbrains.annotations.Nullable;
 import org.junit.jupiter.api.Test;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.fs.TextPointer;
@@ -35,9 +34,12 @@ import org.sonar.api.scan.filesystem.PathResolver;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigInteger;
 import java.net.URI;
 import java.nio.charset.Charset;
 import java.nio.file.Path;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Collections;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -158,21 +160,25 @@ class GosuSensorTest {
             return "throwing-input-file.gs";
         }
 
+        @SuppressWarnings("deprecation")
         @Override
         public String relativePath() {
             return null;
         }
 
+        @SuppressWarnings("deprecation")
         @Override
         public String absolutePath() {
             return null;
         }
 
+        @SuppressWarnings("deprecation")
         @Override
         public File file() {
             return null;
         }
 
+        @SuppressWarnings("deprecation")
         @Override
         public Path path() {
             return null;
@@ -183,7 +189,6 @@ class GosuSensorTest {
             return null;
         }
 
-        @Nullable
         @Override
         public String language() {
             return GosuLanguage.KEY;
@@ -241,6 +246,11 @@ class GosuSensorTest {
 
         @Override
         public Charset charset() {
+            return null;
+        }
+
+        @Override
+        public String md5Hash() {
             return null;
         }
 

@@ -23,16 +23,16 @@ import de.friday.sonarqube.gosu.plugin.GosuRulesDefinition;
 import de.friday.sonarqube.gosu.plugin.GosuSensor;
 import org.sonar.api.Plugin;
 
-
 public class GosuPlugin implements Plugin {
 
+    @Override
     public void define(Context context) {
         context.addExtensions(
                 GosuLanguage.class,
                 GosuLangProperties.class,
                 GosuSensor.class,
                 GosuRulesDefinition.class,
-                GosuLangProperties.getProperties(),
+                GosuLangProperties.getSuffixProperty(),
                 GosuQualityProfile.class
         );
     }

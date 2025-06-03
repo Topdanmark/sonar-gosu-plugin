@@ -19,16 +19,16 @@ package de.friday.sonarqube.gosu.plugin.measures.metrics;
 import com.google.inject.Inject;
 import de.friday.sonarqube.gosu.antlr.GosuParser;
 import de.friday.sonarqube.gosu.plugin.GosuFileProperties;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.measures.CoreMetrics;
-import org.sonar.api.utils.log.Logger;
-import org.sonar.api.utils.log.Loggers;
 import org.sonar.plugins.surefire.data.UnitTestClassReport;
 import org.sonar.plugins.surefire.data.UnitTestIndex;
 
 public class TestsMetric extends BaseMetric {
 
-    private static final Logger LOGGER = Loggers.get(TestsMetric.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(TestsMetric.class);
     private final UnitTestIndex index;
 
     private String packageName = "";

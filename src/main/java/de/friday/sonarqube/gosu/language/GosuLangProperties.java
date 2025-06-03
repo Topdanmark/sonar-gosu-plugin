@@ -17,28 +17,26 @@
 package de.friday.sonarqube.gosu.language;
 
 import org.sonar.api.config.PropertyDefinition;
-import org.sonar.api.resources.Qualifiers;
 
-import java.util.Collections;
-import java.util.List;
+import java.util.Set;
 
 public final class GosuLangProperties {
     public static final String FILE_SUFFIXES_KEY = "sonar.gosu.file.suffixes";
     public static final String FILE_SUFFIXES_DEFAULT_VALUE = ".gs,.gsx";
+    public static final String GOSU_CATEGORY = "Gosu";
 
     private GosuLangProperties() {
     }
 
-    public static List<PropertyDefinition> getProperties() {
-        return Collections.singletonList(
-                PropertyDefinition.builder(FILE_SUFFIXES_KEY)
-                        .defaultValue(FILE_SUFFIXES_DEFAULT_VALUE)
-                        .multiValues(true)
-                        .category("Gosu")
-                        .name("File Suffixes")
-                        .description("Comma-separated list of suffixes for files to analyze.")
-                        .onQualifiers(Qualifiers.PROJECT)
-                        .build()
-        );
+    public static PropertyDefinition getSuffixProperty() {
+        return PropertyDefinition.builder(FILE_SUFFIXES_KEY)
+                .defaultValue(FILE_SUFFIXES_DEFAULT_VALUE)
+                .multiValues(true)
+                .category(GOSU_CATEGORY)
+                .name("File Suffixes")
+                .description("Comma-separated list of suffixes for files to analyze.")
+                .subCategory("General")
+                .onConfigScopes(Set.of(PropertyDefinition.ConfigScope.PROJECT))
+                .build();
     }
 }

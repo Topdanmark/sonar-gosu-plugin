@@ -65,20 +65,8 @@ public class FileLinesContextFactorySpy implements FileLinesContextFactory {
         }
 
         @Override
-        public Integer getIntValue(String metricKey, int line) {
-            final Map<Integer, Object> lines = map.get(metricKey);
-            return (Integer) lines.get(line);
-        }
-
-        @Override
         public void setStringValue(String metricKey, int line, String value) {
             setValue(metricKey, line, value);
-        }
-
-        @Override
-        public String getStringValue(String metricKey, int line) {
-            final Map<Integer, Object> lines = map.get(metricKey);
-            return (String) lines.get(line);
         }
 
         private void setValue(String metricKey, int line, Object value) {
@@ -102,7 +90,7 @@ public class FileLinesContextFactorySpy implements FileLinesContextFactory {
         }
 
         private static Map<Integer, Object> optimizeStorage(String metricKey, Map<Integer, Object> lines) {
-            if (CoreMetrics.NCLOC_DATA_KEY.equals(metricKey) || CoreMetrics.COMMENT_LINES_DATA_KEY.equals(metricKey) || CoreMetrics.EXECUTABLE_LINES_DATA_KEY.equals(metricKey)) {
+            if (CoreMetrics.NCLOC_DATA_KEY.equals(metricKey) || CoreMetrics.EXECUTABLE_LINES_DATA_KEY.equals(metricKey)) {
                 return lines.entrySet().stream()
                         .filter(entry -> !entry.getValue().equals(0))
                         .collect(toMap(Map.Entry<Integer, Object>::getKey, Map.Entry<Integer, Object>::getValue));

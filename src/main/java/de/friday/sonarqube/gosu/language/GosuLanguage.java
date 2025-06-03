@@ -17,7 +17,6 @@
 package de.friday.sonarqube.gosu.language;
 
 import java.util.Objects;
-import org.apache.commons.lang3.StringUtils;
 import org.sonar.api.config.Configuration;
 import org.sonar.api.resources.AbstractLanguage;
 
@@ -44,18 +43,16 @@ public class GosuLanguage extends AbstractLanguage {
         config = configuration;
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @see org.sonar.api.resources.AbstractLanguage#getFileSuffixes()
+     */
+    @Override
     public String[] getFileSuffixes() {
-        final String[] suffixes = filterEmptyStrings(config.getStringArray(GosuLangProperties.FILE_SUFFIXES_KEY));
-        if (isEmpty(suffixes)) return StringUtils.split(GosuLangProperties.FILE_SUFFIXES_DEFAULT_VALUE, ",");
-        return suffixes;
-    }
-
-    private boolean isEmpty(String[] suffixes) {
-        return suffixes.length == 0;
-    }
-
-    private String[] filterEmptyStrings(String[] strings) {
-        return Arrays.stream(strings).filter(StringUtils::isNotBlank).toArray(String[]::new);
+        String[] suffixes = Arrays.stream(config.getStringArray(GosuLangProperties.FILE_SUFFIXES_KEY)).filter(s -> s != null &&
+                !s.trim().isEmpty()).toArray(String[]::new);
+        return suffixes.length > 0 ? suffixes : GosuLangProperties.FILE_SUFFIXES_DEFAULT_VALUE.split(",");
     }
 
     @Override
