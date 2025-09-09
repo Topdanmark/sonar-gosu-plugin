@@ -1,6 +1,6 @@
 services:
   sonarqube:
-    image: friday:sonar-server
+    image: if:sonar-server
     hostname: sonarqube
     container_name: sonarqube
     depends_on:

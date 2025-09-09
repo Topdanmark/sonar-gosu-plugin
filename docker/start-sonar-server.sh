@@ -1,16 +1,10 @@
 #!/bin/sh
 
-BASEDIR="$(dirname "$0")"
-PROJECT_DIR="$(dirname `pwd`)"
+echo "COPY SONAR GOSU PLUGIN"
+cp ../build/libs/sonar-gosu-plugin-*.jar sonar-gosu-plugin.jar
 
-echo "------ BUILDING SONAR GOSU PLUGIN ------"
-(cd "$PROJECT_DIR" || exit; ./gradlew shadowJar)
-echo "----------------------------------------"
+echo "BUILDING CUSTOM SONAR SERVER DOCKER IMAGE:"
+docker build -f Dockerfile -t "if:sonar-server" .
 
-echo "------ BUILDING CUSTOM SONAR SERVER DOCKER IMAGE ------"
-(cd "$PROJECT_DIR" || exit; docker build -f docker/Dockerfile -t "friday:sonar-server" .)
-echo "-------------------------------------------------------"
-
-echo "------ STARTING ------"
+echo "STARTING:"
 docker-compose up -d
-echo "----------------------"
