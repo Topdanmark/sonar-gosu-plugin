@@ -19,3 +19,5 @@ out/
 .settings
 .classpath
 .env.local
+
+/docker/sonar-gosu-plugin.jar

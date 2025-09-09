@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import org.antlr.v4.runtime.Token;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Strings;
 import org.sonar.check.Rule;
 import static de.friday.sonarqube.gosu.plugin.rules.smells.TODOsRule.KEY;
 
@@ -52,7 +52,7 @@ public class TODOsRule extends BaseGosuRule {
                 .collect(Collectors.toList());
 
         for (Token token : tokens) {
-            if (StringUtils.containsIgnoreCase(token.getText(), "TODO")) {
+            if (Strings.CI.contains(token.getText(), "TODO")) {
                 addIssue(new GosuIssue.GosuIssueBuilder(this)
                         .onToken(token)
                         .withMessage("Complete the task associated to this TODO comment.")

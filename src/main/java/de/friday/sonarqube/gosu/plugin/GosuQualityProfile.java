@@ -18,8 +18,6 @@ package de.friday.sonarqube.gosu.plugin;
 
 import de.friday.sonarqube.gosu.language.GosuLanguage;
 import de.friday.sonarqube.gosu.plugin.tools.reflections.RulesKeysExtractor;
-import java.util.Optional;
-import org.sonar.api.rules.Rule;
 import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 
 public class GosuQualityProfile implements BuiltInQualityProfilesDefinition {
@@ -37,11 +35,7 @@ public class GosuQualityProfile implements BuiltInQualityProfilesDefinition {
     }
 
     public void activateRules(NewBuiltInQualityProfile builtInQualityProfile) {
-        RulesKeysExtractor.getAllRulesKeys().forEach(ruleKey -> activateRule(ruleKey, builtInQualityProfile));
-    }
-
-    private void activateRule(String ruleKey, NewBuiltInQualityProfile builtInQualityProfile) {
-        final Optional<Rule> rule = Optional.ofNullable(Rule.create(GosuLanguage.REPOSITORY_KEY, ruleKey));
-        rule.ifPresent(value -> builtInQualityProfile.activateRule(value.getRepositoryKey(), value.getKey()));
+        RulesKeysExtractor.getAllRulesKeys().forEach(ruleKey -> builtInQualityProfile.activateRule(
+                GosuLanguage.REPOSITORY_KEY, ruleKey));
     }
 }

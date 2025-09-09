@@ -1,10 +1,10 @@
 #!/bin/sh
 
-echo "COPY SONAR GOSU PLUGIN"
+echo "COPY build/libs/sonar-gosu-plugin-*.jar /opt/sonarqube/extensions/plugins"
 cp ../build/libs/sonar-gosu-plugin-*.jar sonar-gosu-plugin.jar
 
-echo "BUILDING CUSTOM SONAR SERVER DOCKER IMAGE:"
+echo "BUILD If custom Sonar server Docker image:"
 docker build -f Dockerfile -t "if:sonar-server" .
 
-echo "STARTING:"
+echo "START:"
 docker-compose up -d

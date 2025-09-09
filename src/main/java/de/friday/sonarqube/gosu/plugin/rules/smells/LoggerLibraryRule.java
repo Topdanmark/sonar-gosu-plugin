@@ -19,7 +19,7 @@ package de.friday.sonarqube.gosu.plugin.rules.smells;
 import de.friday.sonarqube.gosu.antlr.GosuParser;
 import de.friday.sonarqube.gosu.plugin.issues.GosuIssue;
 import de.friday.sonarqube.gosu.plugin.rules.BaseGosuRule;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Strings;
 import org.sonar.check.Rule;
 import org.sonar.check.RuleProperty;
 
@@ -52,7 +52,7 @@ public class LoggerLibraryRule extends BaseGosuRule {
     }
 
     private boolean isWrongLogger(String usesStatement) {
-        return StringUtils.containsIgnoreCase(usesStatement, LOGGER)
+        return Strings.CI.contains(usesStatement, LOGGER)
                 && !isLibraryInPermittedLoggers(usesStatement);
     }
 

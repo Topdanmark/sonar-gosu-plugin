@@ -15,21 +15,19 @@ repositories {
 group = 'de.friday'
 
 dependencies {
-    antlr "org.antlr:antlr4:${antlrVersion}"
+    antlr "org.antlr:antlr4:4.13.2"
 
-    compileOnlyApi "org.sonarsource.api.plugin:sonar-plugin-api:${sonarPluginApiVersion}"
-
-    implementation "org.sonarqube:org.sonarqube.gradle.plugin:6.1.0.5360"
-    implementation "org.antlr:antlr4-runtime:${antlrVersion}"
-    implementation "org.sonarsource.analyzer-commons:sonar-analyzer-commons:2.16.0.3141"
-    implementation "org.sonarsource.java:java-surefire:8.11.0.38440"
+    implementation 'org.sonarsource.api.plugin:sonar-plugin-api:13.0.0.3026'
+    implementation "org.sonarqube:org.sonarqube.gradle.plugin:6.3.1.5724"
+    implementation "org.sonarsource.analyzer-commons:sonar-analyzer-commons:2.18.0.3393"
+    implementation "org.sonarsource.java:java-surefire:8.18.0.40025"
     implementation "org.reflections:reflections:0.10.2"
     implementation "com.google.inject:guice:7.0.0"
 
-    testImplementation "org.sonarsource.sonarqube:sonar-plugin-api-impl:${sonarPluginApiImplVersion}"
-    testImplementation "org.sonarsource.sonarqube:sonar-testing-harness:9.4.0.54424"
+    testImplementation "org.sonarsource.sonarqube:sonar-plugin-api-impl:25.9.0.112764"
+    testImplementation "org.sonarsource.sonarqube:sonar-testing-harness:25.9.0.112764"
 
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.13.4'
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
@@ -44,6 +42,7 @@ generateGrammarSource {
 
 compileJava {
     options.encoding = 'UTF-8'
+    options.compilerArgs += ["-Xlint:deprecation", "-Xlint:none"]
     dependsOn generateGrammarSource
 }
 
