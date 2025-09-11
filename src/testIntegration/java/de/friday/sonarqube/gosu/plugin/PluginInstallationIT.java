@@ -42,11 +42,13 @@ public class PluginInstallationIT {
         //then
         assertThat(installedPlugins.getPluginsList()).satisfiesOnlyOnce(
                 pluginDetails -> {
-                    assertThat(pluginDetails.getKey()).isEqualTo("communitygosu");
-                    assertThat(pluginDetails.getName()).isEqualTo("Community Gosu Plugin");
-                    assertThat(pluginDetails.getDescription()).isEqualTo("Gosu Programming Language Plugin for SonarQube");
+                    assertThat(pluginDetails.getKey()).isEqualTo("gosu");
+                    assertThat(pluginDetails.getName()).isEqualTo("Gosu Language Plugin");
+                    assertThat(pluginDetails.getDescription()).isEqualTo("Gosu Programming Language Plugin " +
+                            "for SonarQube");
                     assertThat(pluginDetails.getLicense()).isEqualTo("GNU AGPL 3");
-                    assertThat(pluginDetails.getOrganizationName()).isEqualTo("FRIDAY Insurance S.A.");
+                    assertThat(pluginDetails.getOrganizationName()).isEqualTo("If Skadeforsikring, filial af If " +
+                            "Skadeförsäkring AB (publ), Sverige");
                 }
         );
     }

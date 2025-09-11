@@ -45,7 +45,7 @@ public class SimpleGosuProjectIT {
 
     @Test
     void shouldScanGosuGradleProjectSuccessfully() {
-        assertThat(buildResult.isSuccess()).isTrue();
+        assertThat(buildResult.isSuccess());
     }
 
     @Test

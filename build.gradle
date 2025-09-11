@@ -2,7 +2,6 @@ plugins {
     id 'antlr'
     id 'java'
     id 'jacoco'
-    id 'maven-publish'
     id 'org.sonarqube' version '6.1.0.5360'
     id 'com.gradleup.shadow' version '9.1.0'
 }
@@ -15,19 +14,25 @@ repositories {
 group = 'de.friday'
 
 dependencies {
-    antlr "org.antlr:antlr4:4.13.2"
+    antlr 'org.antlr:antlr4:4.13.2'
 
     implementation 'org.sonarsource.api.plugin:sonar-plugin-api:13.0.0.3026'
-    implementation "org.sonarqube:org.sonarqube.gradle.plugin:6.3.1.5724"
-    implementation "org.sonarsource.analyzer-commons:sonar-analyzer-commons:2.18.0.3393"
-    implementation "org.sonarsource.java:java-surefire:8.18.0.40025"
-    implementation "org.reflections:reflections:0.10.2"
-    implementation "com.google.inject:guice:7.0.0"
+    implementation 'org.sonarqube:org.sonarqube.gradle.plugin:6.3.1.5724'
+    implementation 'org.sonarsource.analyzer-commons:sonar-analyzer-commons:2.18.0.3393'
+    implementation 'org.sonarsource.java:java-surefire:8.18.0.40025'
+    implementation 'org.reflections:reflections:0.10.2'
+    implementation 'com.google.inject:guice:7.0.0'
 
-    testImplementation "org.sonarsource.sonarqube:sonar-plugin-api-impl:25.9.0.112764"
-    testImplementation "org.sonarsource.sonarqube:sonar-testing-harness:25.9.0.112764"
+    testImplementation "org.sonarsource.sonarqube:sonar-plugin-api-impl:${sonarqubeArtifactVersion}"
+    testImplementation "org.sonarsource.sonarqube:sonar-testing-harness:${sonarqubeArtifactVersion}"
+    testImplementation "org.sonarsource.sonarqube:sonar-ws:${sonarqubeArtifactVersion}"
+
+    testImplementation "org.sonarsource.orchestrator:sonar-orchestrator:${sonarqubeOrchestratorVersion}"
+    testImplementation "org.sonarsource.orchestrator:sonar-orchestrator-junit5:${sonarqubeOrchestratorVersion}"
 
     testImplementation 'org.junit.jupiter:junit-jupiter:5.13.4'
+
+    testImplementation 'com.google.protobuf:protobuf-java-util:4.32.0'
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
@@ -102,7 +107,7 @@ tasks.register("testIntegration", IntegrationTest) {
     description = "Runs integration tests"
     group = "verification"
     systemProperties([
-            "sonarServerVersion": providers.gradleProperty("sonarqubeServerVersion").getOrElse(sonarqubeVersion),
+            "sonarServerVersion": providers.gradleProperty("sonarqubeServerVersion").getOrElse(sonarqubeServerVersion),
             "gosuPluginVersion": providers.gradleProperty("sonarGosuPluginVersion").getOrElse(version)
     ])
     useJUnitPlatform {
@@ -157,7 +162,7 @@ jar {
                 'Plugin-Description': 'Gosu Programming Language Plugin for SonarQube',
                 'Plugin-Display-Version': "${displayVersion}",
                 'Plugin-IssueTrackerUrl': 'https://github.com/FRI-DAY/sonar-gosu-plugin/issues',
-                'Plugin-Key': 'gosu-language',
+                'Plugin-Key': 'gosu',
                 'Plugin-License': 'GNU AGPL 3',
                 'Plugin-Name': 'Gosu Language Plugin',
                 'Plugin-Homepage': 'https://github.com/FRI-DAY/sonar-gosu-plugin',

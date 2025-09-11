@@ -40,6 +40,7 @@ public class SonarServer {
                 .keepBundledPlugins()
                 .useDefaultAdminCredentialsForBuilds(true)
                 .setSonarVersion(config.getSonarVersion().asLatestRelease())
+                .setOrchestratorProperty("orchestrator.artifactory.url", "https://repo1.maven.org/maven2/")
                 .build();
     }
 

@@ -27,7 +27,7 @@ import org.junit.jupiter.api.extension.ParameterResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class SonarServerExtension implements BeforeAllCallback, ParameterResolver, ExtensionContext.Store.CloseableResource {
+public class SonarServerExtension implements BeforeAllCallback, ParameterResolver, AutoCloseable {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SonarServerExtension.class);
     private static final ExtensionContext.Namespace NAMESPACE = ExtensionContext.Namespace.GLOBAL;
@@ -67,7 +67,6 @@ public class SonarServerExtension implements BeforeAllCallback, ParameterResolve
     /**
      * Registry this extension as a closeable resource to be closed after all the tests finished.
      * Check close();
-     * @param context
      */
     private void registryServerShutdownCallback(ExtensionContext context) {
         context.getRoot().getStore(NAMESPACE).put("SonarServer:Started", this);
