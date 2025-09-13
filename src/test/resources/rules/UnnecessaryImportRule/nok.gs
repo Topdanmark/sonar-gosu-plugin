@@ -1,14 +1,14 @@
 package checks
 
 uses friday.cc.gdv.GdvInvoiceWrapper
-uses java.lang.Object
-uses typekey.SalvageStatus
-uses entity.Claim
-uses entity.windowed.ClaimOwner
-uses checks.OtherClass
-uses checks.nested.UnusedImport
+uses java.lang.Object //java.lang
+uses typekey.SalvageStatus //typekey
+uses entity.Claim //entity
+uses entity.windowed.ClaimOwner //entity
+uses checks.OtherClass //same package
+uses checks.nested.UnusedImport //unused
 uses checks.nested.SomethingElse
-uses friday.cc.gdv.GdvInvoiceWrapper
+uses friday.cc.gdv.GdvInvoiceWrapper //duplicate
 
 uses de.*
 

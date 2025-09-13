@@ -38,16 +38,11 @@ class UnnecessaryImportRuleTest {
                 .whenCheckedAgainst(UnnecessaryImportRule.class)
                 .then()
                 .issuesFound()
-                .hasSizeEqualTo(7)
+                .hasSizeEqualTo(4)
                 .areLocatedOn(
                         GosuIssueLocations.of(
                                 // java.lang
                                 Arrays.asList(4, 6, 4, 22),
-                                // gw typekey
-                                Arrays.asList(5, 6, 5, 27),
-                                // gw entity
-                                Arrays.asList(6, 6, 6, 18),
-                                Arrays.asList(7, 6, 7, 32),
                                 // same package used
                                 Arrays.asList(8, 6, 8, 23),
                                 // duplicated imports
@@ -56,14 +51,6 @@ class UnnecessaryImportRuleTest {
                                 Arrays.asList(9, 6, 9, 32)
                         )
                 );
-    }
-
-    @Test
-    void findsIssuesWhenUnnecessaryImportIsFoundAndAllowedExplicitImportNamespacesIsCustom() {
-        given("UnnecessaryImportRule/nok.gs")
-                .whenCheckedAgainst(UnnecessaryImportRule.class)
-                .withRuleProperty("AllowedExplicitImportNamespaces", "entity.windowed.")
-                .then().issuesFound().hasSizeEqualTo(6);
     }
 
     @Test

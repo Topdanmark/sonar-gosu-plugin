@@ -21,7 +21,9 @@ import org.sonar.api.utils.Version;
 public enum SonarServerVersionSupported {
     VERSION_25_1(Version.create(25, 1)),
     VERSION_25_2(Version.create(25, 2)),
-    VERSION_25_3(Version.create(25, 3));
+    VERSION_25_3(Version.create(25, 3)),
+    VERSION_25_4(Version.create(25, 4)),
+    VERSION_25_9(Version.create(25, 9));
 
     private final Version version;
 
