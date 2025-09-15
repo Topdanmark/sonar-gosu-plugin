@@ -2,7 +2,7 @@ plugins {
     id 'antlr'
     id 'java'
     id 'jacoco'
-    id 'org.sonarqube' version '6.1.0.5360'
+    id 'org.sonarqube' version '6.3.1.5724'
     id 'com.gradleup.shadow' version '9.1.0'
 }
 
@@ -72,7 +72,7 @@ jacocoTestReport {
         xml.required = true
         csv.required = false
         html.required = true
-        html.outputLocation.set(file("$buildDir/jacocoHtml"))
+        html.outputLocation.set(file("build/jacocoHtml"))
     }
 
     //Excludes ANTLR generated sources
@@ -108,7 +108,7 @@ tasks.register("testIntegration", IntegrationTest) {
     group = "verification"
     systemProperties([
             "sonarServerVersion": providers.gradleProperty("sonarqubeServerVersion").getOrElse(sonarqubeServerVersion),
-            "gosuPluginVersion": providers.gradleProperty("sonarGosuPluginVersion").getOrElse(version)
+            "gosuPluginVersion": providers.gradleProperty("sonarGosuPluginVersion").getOrElse(version.toString())
     ])
     useJUnitPlatform {
         includeTags("integration")
@@ -123,7 +123,7 @@ tasks.register("testIntegration", IntegrationTest) {
 
 sonarqube {
     properties {
-        property "sonar.coverage.jacoco.xmlReportPaths", "$buildDir/reports/jacoco/test/jacocoTestReport.xml"
+        property "sonar.coverage.jacoco.xmlReportPaths", "${layout.buildDirectory}/reports/jacoco/test/jacocoTestReport.xml"
         property "sonar.sourceEncoding", "UTF-8"
         //Excludes ANTLR generated files
         property "sonar.exclusions", "src/**/${antlrGeneratedSourcesPath.join("/")}/**/*"

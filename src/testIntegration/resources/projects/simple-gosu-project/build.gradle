@@ -1,6 +1,6 @@
 plugins {
     id 'jacoco'
-    id 'org.sonarqube' version '6.1.0.5360'
+    id 'org.sonarqube' version '6.3.1.5724'
     id 'org.gosu-lang.gosu' version '8.1.2'
 }
 
@@ -38,7 +38,7 @@ jacocoTestReport {
         xml.required = true
         csv.required = false
         html.required = true
-        html.outputLocation.set(file("$buildDir/jacocoHtml"))
+        html.outputLocation.set(file("${layout.buildDirectory}/jacocoHtml"))
     }
 }
 
@@ -52,9 +52,9 @@ sonar {
         property "sonar.projectKey", "simple-gosu-project"
         property "sonar.sources", "src/main/gosu"
         property "sonar.tests", "src/test/gosu"
-        property "sonar.gosu.reportPaths", "build/test-results"
+        property "sonar.gosu.reportPaths", "${rootProject.layout.buildDirectory}/test-results"
         property "sonar.junit.reportPaths", "sonar.junit.reportPaths"
-        property "sonar.coverage.jacoco.xmlReportPaths", "build/reports/jacoco/test/jacocoTestReport.xml"
-        property "sonar.jacoco.reportPath", "build/jacoco/test.exec"
+        property "sonar.coverage.jacoco.xmlReportPaths", "${rootProject.layout.buildDirectory}/reports/jacoco/test/jacocoTestReport.xml"
+        property "sonar.jacoco.reportPath", "${rootProject.layout.buildDirectory}/jacoco/test.exec"
     }
 }
