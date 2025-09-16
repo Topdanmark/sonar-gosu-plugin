@@ -11,7 +11,7 @@ repositories {
     gradlePluginPortal()
 }
 
-group = 'de.friday'
+group = 'dk.ifforsikring'
 
 dependencies {
     antlr 'org.antlr:antlr4:4.13.2'
@@ -37,7 +37,7 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
-def antlrGeneratedSourcesPath = ['de', 'friday', 'sonarqube', 'gosu', 'antlr']
+def antlrGeneratedSourcesPath = ['dk', 'ifforsikring', 'sonarqube', 'gosu', 'antlr']
 
 generateGrammarSource {
     maxHeapSize = "128m"
@@ -158,7 +158,7 @@ jar {
                 'Implementation-Build': 'git rev-parse HEAD'.execute().text.trim(),
                 'Plugin-BuildDate': "${buildDate}",
                 'Plugin-ChildFirstClassLoader': 'false',
-                'Plugin-Class': 'de.friday.sonarqube.gosu.GosuPlugin',
+                'Plugin-Class': 'dk.ifforsikring.sonarqube.gosu.GosuPlugin',
                 'Plugin-Description': 'Gosu Programming Language Plugin for SonarQube',
                 'Plugin-Display-Version': "${displayVersion}",
                 'Plugin-IssueTrackerUrl': 'https://github.com/FRI-DAY/sonar-gosu-plugin/issues',
