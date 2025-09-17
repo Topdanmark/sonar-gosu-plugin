@@ -22,15 +22,16 @@ import dk.ifforsikring.sonarqube.gosu.plugin.context.AnalysisModule;
 import dk.ifforsikring.sonarqube.gosu.plugin.context.GosuParserContext;
 import dk.ifforsikring.sonarqube.gosu.plugin.issues.Issue;
 import dk.ifforsikring.sonarqube.gosu.plugin.issues.IssueCollector;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.List;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.measures.FileLinesContext;
 import org.sonar.plugins.surefire.data.UnitTestIndex;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
 
 public class GosuFileParser {
     private final GosuParser gosuParser = new GosuParser(null);

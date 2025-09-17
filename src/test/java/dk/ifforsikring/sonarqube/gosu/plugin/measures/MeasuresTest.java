@@ -21,9 +21,6 @@ import dk.ifforsikring.test.support.GosuSensorContextTester;
 import dk.ifforsikring.test.support.GosuTestFileParser;
 import dk.ifforsikring.test.support.GosuTestFileParser.GosuFileParsed;
 import dk.ifforsikring.test.support.TestResourcesDirectories;
-import java.nio.file.Path;
-import java.util.List;
-import java.util.stream.Stream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInstance;
@@ -33,6 +30,11 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.sonar.api.batch.fs.TextRange;
 import org.sonar.api.batch.sensor.highlighting.TypeOfText;
 import org.sonar.api.batch.sensor.internal.SensorContextTester;
+
+import java.nio.file.Path;
+import java.util.List;
+import java.util.stream.Stream;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.of;
 

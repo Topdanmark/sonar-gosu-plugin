@@ -16,10 +16,10 @@
  */
 package dk.ifforsikring.sonarqube.gosu.plugin.tools.reflections;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.Set;
 
-import dk.ifforsikring.sonarqube.gosu.plugin.tools.reflections.RulesKeysExtractor;
-import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class RulesKeysExtractorTest {

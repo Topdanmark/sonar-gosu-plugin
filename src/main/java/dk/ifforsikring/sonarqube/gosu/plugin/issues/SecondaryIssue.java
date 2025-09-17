@@ -17,12 +17,13 @@
 package dk.ifforsikring.sonarqube.gosu.plugin.issues;
 
 import dk.ifforsikring.sonarqube.gosu.plugin.utils.TextRangeUtil;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.TerminalNode;
 import org.sonar.api.batch.fs.TextRange;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public class SecondaryIssue implements Comparable<SecondaryIssue> {
     final TextRange range;

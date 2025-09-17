@@ -18,6 +18,7 @@ package dk.ifforsikring.sonarqube.gosu.plugin.tools.reflections;
 
 import dk.ifforsikring.sonarqube.gosu.plugin.rules.RuleType;
 import dk.ifforsikring.sonarqube.gosu.plugin.rules.RulesKeys;
+
 import java.util.Map;
 import java.util.Set;
 

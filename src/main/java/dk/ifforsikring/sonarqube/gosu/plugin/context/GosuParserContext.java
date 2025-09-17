@@ -21,20 +21,21 @@ import com.google.inject.Injector;
 import dk.ifforsikring.sonarqube.gosu.antlr.GosuParser;
 import dk.ifforsikring.sonarqube.gosu.antlr.GosuParserBaseListener;
 import dk.ifforsikring.sonarqube.gosu.language.GosuLanguage;
-import dk.ifforsikring.sonarqube.gosu.plugin.rules.BaseGosuRule;
 import dk.ifforsikring.sonarqube.gosu.plugin.measures.metrics.BaseMetric;
+import dk.ifforsikring.sonarqube.gosu.plugin.rules.BaseGosuRule;
 import dk.ifforsikring.sonarqube.gosu.plugin.tools.listeners.SuppressWarningsListener;
 import dk.ifforsikring.sonarqube.gosu.plugin.tools.reflections.ClassExtractor;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
 import org.antlr.v4.runtime.ANTLRErrorListener;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.rule.ActiveRule;
 import org.sonar.api.batch.rule.CheckFactory;
 import org.sonar.api.batch.rule.Checks;
 import org.sonar.api.batch.sensor.SensorContext;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
 
 public class GosuParserContext {
 

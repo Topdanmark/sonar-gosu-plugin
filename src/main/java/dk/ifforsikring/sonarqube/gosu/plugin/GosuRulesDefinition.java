@@ -18,10 +18,11 @@ package dk.ifforsikring.sonarqube.gosu.plugin;
 
 import dk.ifforsikring.sonarqube.gosu.language.GosuLanguage;
 import dk.ifforsikring.sonarqube.gosu.plugin.tools.reflections.ClassExtractor;
-import java.util.ArrayList;
 import org.sonar.api.SonarRuntime;
 import org.sonar.api.server.rule.RulesDefinition;
 import org.sonarsource.analyzer.commons.RuleMetadataLoader;
+
+import java.util.ArrayList;
 
 public class GosuRulesDefinition implements RulesDefinition {
 

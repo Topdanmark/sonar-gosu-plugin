@@ -27,6 +27,7 @@ import org.sonar.api.SonarRuntime;
 import org.sonar.api.internal.SonarRuntimeImpl;
 import org.sonar.api.rule.RuleStatus;
 import org.sonar.api.server.rule.RulesDefinition;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class GosuRulesDefinitionTest {

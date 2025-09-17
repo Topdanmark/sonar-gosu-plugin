@@ -17,7 +17,6 @@
 package dk.ifforsikring.sonarqube.gosu.plugin.issues;
 
 import dk.ifforsikring.sonarqube.gosu.antlr.GosuLexer;
-import dk.ifforsikring.sonarqube.gosu.plugin.issues.SecondaryIssue;
 import org.antlr.v4.runtime.CommonToken;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.junit.jupiter.api.Test;
@@ -25,6 +24,7 @@ import org.sonar.api.batch.fs.TextPointer;
 import org.sonar.api.batch.fs.TextRange;
 import org.sonar.api.batch.fs.internal.DefaultTextPointer;
 import org.sonar.api.batch.fs.internal.DefaultTextRange;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class SecondaryIssueTest {

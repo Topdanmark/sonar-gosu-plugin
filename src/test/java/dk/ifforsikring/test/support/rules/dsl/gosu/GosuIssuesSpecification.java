@@ -18,13 +18,15 @@ package dk.ifforsikring.test.support.rules.dsl.gosu;
 
 import dk.ifforsikring.test.support.rules.dsl.specification.IssueSpecification;
 import dk.ifforsikring.test.support.rules.dsl.specification.TextLocations;
+import org.sonar.api.batch.fs.TextRange;
+import org.sonar.api.batch.sensor.issue.Issue;
+import org.sonar.api.batch.sensor.issue.IssueLocation;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.sonar.api.batch.fs.TextRange;
-import org.sonar.api.batch.sensor.issue.Issue;
-import org.sonar.api.batch.sensor.issue.IssueLocation;
+
 import static java.util.stream.Collectors.toList;
 import static org.assertj.core.api.Assertions.assertThat;
 

@@ -17,7 +17,6 @@
 package dk.ifforsikring.sonarqube.gosu.plugin.measures.metrics;
 
 import dk.ifforsikring.test.support.GosuTestFileParser;
-import java.util.stream.Stream;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -26,6 +25,9 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.sensor.internal.SensorContextTester;
 import org.sonar.api.measures.CoreMetrics;
+
+import java.util.stream.Stream;
+
 import static dk.ifforsikring.test.support.TestFileComponentKeyBuilder.samplesComponentKeyOf;
 import static dk.ifforsikring.test.support.TestResourcesDirectories.SAMPLES_RESOURCES_DIR;
 import static org.assertj.core.api.Assertions.assertThat;

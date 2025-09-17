@@ -19,10 +19,12 @@ package dk.ifforsikring.sonarqube.gosu.plugin;
 import dk.ifforsikring.test.config.IntegrationTest;
 import dk.ifforsikring.test.framework.sonar.server.SonarServer;
 import dk.ifforsikring.test.framework.sonar.ws.client.SonarWebServicesClient;
-import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.sonarqube.ws.Plugins;
 import org.sonarqube.ws.Qualityprofiles;
+
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @IntegrationTest

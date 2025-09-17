@@ -19,15 +19,11 @@ package dk.ifforsikring.sonarqube.gosu.plugin.tools.listeners;
 import dk.ifforsikring.sonarqube.gosu.antlr.GosuParser;
 import dk.ifforsikring.sonarqube.gosu.antlr.GosuParserBaseListener;
 import dk.ifforsikring.sonarqube.gosu.plugin.utils.TextRangeUtil;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.regex.Pattern;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.sonar.api.batch.fs.TextRange;
+
+import java.util.*;
+import java.util.regex.Pattern;
 
 public final class SuppressWarningsListener extends GosuParserBaseListener {
     private static final String SUPPRESS_WARNINGS = "SuppressWarnings";

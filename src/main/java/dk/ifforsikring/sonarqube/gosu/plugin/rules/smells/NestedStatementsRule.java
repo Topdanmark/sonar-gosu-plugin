@@ -17,16 +17,17 @@
 package dk.ifforsikring.sonarqube.gosu.plugin.rules.smells;
 
 import dk.ifforsikring.sonarqube.gosu.antlr.GosuParser;
-import dk.ifforsikring.sonarqube.gosu.plugin.rules.BaseGosuRule;
 import dk.ifforsikring.sonarqube.gosu.plugin.issues.GosuIssue;
 import dk.ifforsikring.sonarqube.gosu.plugin.issues.SecondaryIssue;
-import java.util.ArrayList;
-import java.util.List;
+import dk.ifforsikring.sonarqube.gosu.plugin.rules.BaseGosuRule;
 import org.antlr.v4.runtime.tree.TerminalNode;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import org.sonar.check.Rule;
 import org.sonar.check.RuleProperty;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Rule(key = NestedStatementsRule.KEY)
 public class NestedStatementsRule extends BaseGosuRule {

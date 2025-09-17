@@ -18,14 +18,15 @@ package dk.ifforsikring.test.support.rules.dsl.gosu;
 
 import dk.ifforsikring.sonarqube.gosu.language.GosuLanguage;
 import dk.ifforsikring.test.support.rules.dsl.specification.SourceCodeFile;
+import org.sonar.api.batch.fs.InputFile;
+import org.sonar.api.batch.fs.internal.TestInputFileBuilder;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import org.sonar.api.batch.fs.InputFile;
-import org.sonar.api.batch.fs.internal.TestInputFileBuilder;
 
 public final class GosuSourceCodeFile implements SourceCodeFile {
     private final String fileName;

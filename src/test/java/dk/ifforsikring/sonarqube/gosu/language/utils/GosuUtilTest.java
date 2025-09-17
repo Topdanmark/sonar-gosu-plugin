@@ -17,10 +17,10 @@
 package dk.ifforsikring.sonarqube.gosu.language.utils;
 
 import dk.ifforsikring.sonarqube.gosu.antlr.GosuLexer;
-import dk.ifforsikring.sonarqube.gosu.language.utils.GosuUtil;
 import org.antlr.v4.runtime.CommonToken;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.junit.jupiter.api.Test;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class GosuUtilTest {

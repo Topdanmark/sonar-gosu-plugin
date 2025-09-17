@@ -20,16 +20,18 @@ import com.google.inject.Inject;
 import dk.ifforsikring.sonarqube.gosu.antlr.GosuLexer;
 import dk.ifforsikring.sonarqube.gosu.antlr.GosuParser;
 import dk.ifforsikring.sonarqube.gosu.plugin.GosuFileProperties;
-import dk.ifforsikring.sonarqube.gosu.plugin.rules.BaseGosuRule;
 import dk.ifforsikring.sonarqube.gosu.plugin.issues.GosuIssue;
+import dk.ifforsikring.sonarqube.gosu.plugin.rules.BaseGosuRule;
+import org.antlr.v4.runtime.Token;
+import org.apache.commons.lang3.Strings;
+import org.sonar.check.Rule;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-import org.antlr.v4.runtime.Token;
-import org.apache.commons.lang3.Strings;
-import org.sonar.check.Rule;
+
 import static dk.ifforsikring.sonarqube.gosu.plugin.rules.smells.TODOsRule.KEY;
 
 @Rule(key = KEY)

@@ -18,11 +18,11 @@ package dk.ifforsikring.sonarqube.gosu.language.statements;
 
 import dk.ifforsikring.sonarqube.gosu.antlr.GosuLexer;
 import dk.ifforsikring.sonarqube.gosu.antlr.GosuParser;
-import dk.ifforsikring.sonarqube.gosu.language.statements.UsesStatement;
 import org.antlr.v4.runtime.CommonToken;
 import org.antlr.v4.runtime.Token;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 

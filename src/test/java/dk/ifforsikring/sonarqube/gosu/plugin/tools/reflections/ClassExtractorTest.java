@@ -17,12 +17,11 @@
 package dk.ifforsikring.sonarqube.gosu.plugin.tools.reflections;
 
 import dk.ifforsikring.sonarqube.gosu.plugin.rules.BaseGosuRule;
-import java.util.Optional;
-
-import dk.ifforsikring.sonarqube.gosu.plugin.tools.reflections.ClassExtractor;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.sonar.api.batch.fs.InputFile;
+
+import java.util.Optional;
 
 class ClassExtractorTest {
     @Test

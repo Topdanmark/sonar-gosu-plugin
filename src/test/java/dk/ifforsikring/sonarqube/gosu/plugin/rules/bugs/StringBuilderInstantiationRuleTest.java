@@ -17,6 +17,7 @@
 package dk.ifforsikring.sonarqube.gosu.plugin.rules.bugs;
 
 import org.junit.jupiter.api.Test;
+
 import static dk.ifforsikring.test.support.rules.dsl.gosu.GosuRuleTestDsl.given;
 
 class StringBuilderInstantiationRuleTest {

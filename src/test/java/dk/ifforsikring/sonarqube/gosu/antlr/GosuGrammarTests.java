@@ -18,14 +18,16 @@ package dk.ifforsikring.sonarqube.gosu.antlr;
 
 import dk.ifforsikring.test.support.GosuTestFileParser;
 import dk.ifforsikring.test.support.antlr.TreeWalker;
-import java.util.Optional;
-import java.util.stream.Stream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.Optional;
+import java.util.stream.Stream;
+
 import static dk.ifforsikring.sonarqube.gosu.antlr.ComplexClassTestFixture.forGosuFile;
 import static org.assertj.core.api.Assertions.assertThat;
 

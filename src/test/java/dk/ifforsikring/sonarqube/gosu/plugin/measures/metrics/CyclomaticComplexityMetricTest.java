@@ -21,6 +21,7 @@ import org.junit.jupiter.api.Test;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.sensor.internal.SensorContextTester;
 import org.sonar.api.measures.CoreMetrics;
+
 import static dk.ifforsikring.test.support.TestFileComponentKeyBuilder.samplesComponentKeyOf;
 import static dk.ifforsikring.test.support.TestResourcesDirectories.SAMPLES_RESOURCES_DIR;
 import static org.assertj.core.api.Assertions.assertThat;

@@ -17,8 +17,9 @@
 package dk.ifforsikring.sonarqube.gosu.language.statements;
 
 import dk.ifforsikring.sonarqube.gosu.antlr.GosuParser;
-import java.util.Objects;
 import org.antlr.v4.runtime.Token;
+
+import java.util.Objects;
 
 public final class UsesStatement {
     private final String uses;

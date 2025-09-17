@@ -16,11 +16,11 @@
  */
 package dk.ifforsikring.sonarqube.gosu.language;
 
-import java.util.Objects;
 import org.sonar.api.config.Configuration;
 import org.sonar.api.resources.AbstractLanguage;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class GosuLanguage extends AbstractLanguage {
 

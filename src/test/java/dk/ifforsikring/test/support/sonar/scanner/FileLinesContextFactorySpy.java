@@ -18,8 +18,6 @@ package dk.ifforsikring.test.support.sonar.scanner;
 
 import com.google.common.collect.ImmutableMap;
 import dk.ifforsikring.test.support.TestResourcesDirectories;
-import java.util.HashMap;
-import java.util.Map;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.internal.SensorContextTester;
@@ -28,6 +26,10 @@ import org.sonar.api.measures.FileLinesContext;
 import org.sonar.api.measures.FileLinesContextFactory;
 import org.sonar.api.measures.Metric;
 import org.sonar.api.utils.KeyValueFormat;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import static java.util.stream.Collectors.toMap;
 
 public class FileLinesContextFactorySpy implements FileLinesContextFactory {

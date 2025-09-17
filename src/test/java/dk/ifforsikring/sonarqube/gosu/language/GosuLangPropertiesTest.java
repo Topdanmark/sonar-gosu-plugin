@@ -16,7 +16,6 @@
  */
 package dk.ifforsikring.sonarqube.gosu.language;
 
-import dk.ifforsikring.sonarqube.gosu.language.GosuLangProperties;
 import org.junit.jupiter.api.Test;
 import org.sonar.api.config.PropertyDefinition;
 

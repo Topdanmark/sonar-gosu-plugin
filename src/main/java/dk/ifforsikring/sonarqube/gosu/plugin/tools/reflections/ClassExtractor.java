@@ -16,19 +16,14 @@
  */
 package dk.ifforsikring.sonarqube.gosu.plugin.tools.reflections;
 
-import dk.ifforsikring.sonarqube.gosu.plugin.rules.BaseGosuRule;
 import dk.ifforsikring.sonarqube.gosu.plugin.measures.metrics.BaseMetric;
+import dk.ifforsikring.sonarqube.gosu.plugin.rules.BaseGosuRule;
 import dk.ifforsikring.sonarqube.gosu.plugin.utils.RulesMetadataUtil;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
 import org.reflections.Reflections;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.check.Rule;
+
+import java.util.*;
 
 public final class ClassExtractor {
     private static final Map<String, Class<? extends BaseGosuRule>> allRules = new HashMap<>();

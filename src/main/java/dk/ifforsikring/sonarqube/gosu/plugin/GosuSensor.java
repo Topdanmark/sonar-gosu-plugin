@@ -21,13 +21,6 @@ import dk.ifforsikring.sonarqube.gosu.plugin.issues.Issue;
 import dk.ifforsikring.sonarqube.gosu.plugin.measures.Measures;
 import dk.ifforsikring.sonarqube.gosu.plugin.reports.ReportsDirectories;
 import dk.ifforsikring.sonarqube.gosu.plugin.reports.ReportsScanner;
-import java.io.File;
-import java.io.IOException;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Optional;
-import java.util.concurrent.TimeUnit;
-import javax.annotation.Nonnull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.sonar.api.batch.fs.FilePredicate;
@@ -41,6 +34,14 @@ import org.sonar.api.measures.FileLinesContextFactory;
 import org.sonar.api.scan.filesystem.PathResolver;
 import org.sonar.plugins.surefire.data.UnitTestIndex;
 import org.sonarsource.analyzer.commons.ProgressReport;
+
+import javax.annotation.Nonnull;
+import java.io.File;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 public class GosuSensor implements Sensor {
     private static final Logger LOG = LoggerFactory.getLogger(GosuSensor.class);

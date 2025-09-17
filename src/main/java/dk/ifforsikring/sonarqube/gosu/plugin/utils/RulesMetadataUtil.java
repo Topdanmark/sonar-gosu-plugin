@@ -19,12 +19,13 @@ package dk.ifforsikring.sonarqube.gosu.plugin.utils;
 import com.google.common.io.Resources;
 import com.google.gson.Gson;
 import dk.ifforsikring.sonarqube.gosu.language.GosuLanguage;
+import org.sonar.api.server.debt.DebtRemediationFunction;
+import org.sonar.api.server.rule.RulesDefinition;
+
+import javax.annotation.Nullable;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import javax.annotation.Nullable;
-import org.sonar.api.server.debt.DebtRemediationFunction;
-import org.sonar.api.server.rule.RulesDefinition;
 
 public final class RulesMetadataUtil {
     private static final Gson GSON = new Gson();

@@ -21,6 +21,7 @@ import dk.ifforsikring.test.support.GosuTestFileParser.GosuFileParsed;
 import org.junit.jupiter.api.Test;
 import org.sonar.api.batch.sensor.internal.SensorContextTester;
 import org.sonar.api.measures.CoreMetrics;
+
 import static dk.ifforsikring.test.support.TestFileComponentKeyBuilder.metricComponentKeyOf;
 import static dk.ifforsikring.test.support.TestResourcesDirectories.METRICS_RESOURCES_DIR;
 import static org.assertj.core.api.Assertions.assertThat;

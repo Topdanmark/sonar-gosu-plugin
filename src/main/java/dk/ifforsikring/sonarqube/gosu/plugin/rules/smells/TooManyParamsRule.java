@@ -19,15 +19,16 @@ package dk.ifforsikring.sonarqube.gosu.plugin.rules.smells;
 
 import dk.ifforsikring.sonarqube.gosu.antlr.GosuParser;
 import dk.ifforsikring.sonarqube.gosu.language.utils.GosuUtil;
-import dk.ifforsikring.sonarqube.gosu.plugin.rules.BaseGosuRule;
 import dk.ifforsikring.sonarqube.gosu.plugin.issues.GosuIssue;
 import dk.ifforsikring.sonarqube.gosu.plugin.issues.SecondaryIssue;
+import dk.ifforsikring.sonarqube.gosu.plugin.rules.BaseGosuRule;
 import dk.ifforsikring.sonarqube.gosu.plugin.utils.TextRangeUtil;
-import java.util.ArrayList;
-import java.util.List;
 import org.sonar.api.batch.fs.TextRange;
 import org.sonar.check.Rule;
 import org.sonar.check.RuleProperty;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Rule(key = TooManyParamsRule.KEY)
 public class TooManyParamsRule extends BaseGosuRule {

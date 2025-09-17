@@ -17,13 +17,10 @@
 package dk.ifforsikring.test.config;
 
 import dk.ifforsikring.test.framework.sonar.SonarServerExtension;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Inherited;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.extension.ExtendWith;
+
+import java.lang.annotation.*;
 
 @Inherited
 @Target({ ElementType.TYPE, ElementType.METHOD })

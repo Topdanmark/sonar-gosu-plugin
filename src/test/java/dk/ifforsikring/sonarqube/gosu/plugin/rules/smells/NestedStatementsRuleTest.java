@@ -17,9 +17,10 @@
 package dk.ifforsikring.sonarqube.gosu.plugin.rules.smells;
 
 import dk.ifforsikring.test.support.rules.dsl.gosu.GosuIssueLocations;
+import org.junit.jupiter.api.Test;
+
 import java.util.Arrays;
 
-import org.junit.jupiter.api.Test;
 import static dk.ifforsikring.test.support.rules.dsl.gosu.GosuRuleTestDsl.given;
 
 class NestedStatementsRuleTest {

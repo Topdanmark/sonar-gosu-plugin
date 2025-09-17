@@ -16,11 +16,12 @@
  */
 package dk.ifforsikring.test.framework.sonar.ws.client;
 
-import java.util.List;
 import org.sonarqube.ws.Qualityprofiles;
 import org.sonarqube.ws.client.HttpConnector;
 import org.sonarqube.ws.client.qualityprofiles.QualityprofilesService;
 import org.sonarqube.ws.client.qualityprofiles.SearchRequest;
+
+import java.util.List;
 
 public class QualityProfilesServiceAdapter extends QualityprofilesService {
     public QualityProfilesServiceAdapter(HttpConnector connector) {

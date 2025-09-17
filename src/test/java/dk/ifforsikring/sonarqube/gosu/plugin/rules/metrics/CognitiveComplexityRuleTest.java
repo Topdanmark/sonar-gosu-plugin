@@ -17,8 +17,10 @@
 package dk.ifforsikring.sonarqube.gosu.plugin.rules.metrics;
 
 import dk.ifforsikring.test.support.rules.dsl.gosu.GosuIssueLocations;
-import java.util.Arrays;
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+
 import static dk.ifforsikring.test.support.rules.dsl.gosu.GosuRuleTestDsl.given;
 
 class CognitiveComplexityRuleTest {

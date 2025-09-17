@@ -18,9 +18,6 @@ package dk.ifforsikring.sonarqube.gosu.plugin;
 
 import dk.ifforsikring.test.support.GosuTestFileParser;
 import dk.ifforsikring.test.support.sonar.scanner.FileLinesContextFactorySpy;
-import java.io.IOException;
-import java.util.stream.Stream;
-
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -30,6 +27,10 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.fs.internal.TestInputFileBuilder;
 import org.sonar.api.measures.FileLinesContext;
+
+import java.io.IOException;
+import java.util.stream.Stream;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 

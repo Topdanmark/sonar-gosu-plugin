@@ -21,21 +21,14 @@ import dk.ifforsikring.sonarqube.gosu.antlr.GosuLexer;
 import dk.ifforsikring.sonarqube.gosu.antlr.GosuParser;
 import dk.ifforsikring.sonarqube.gosu.language.utils.GosuUtil;
 import dk.ifforsikring.sonarqube.gosu.plugin.GosuFileProperties;
-import dk.ifforsikring.sonarqube.gosu.plugin.rules.BaseGosuRule;
 import dk.ifforsikring.sonarqube.gosu.plugin.issues.GosuIssue;
 import dk.ifforsikring.sonarqube.gosu.plugin.issues.SecondaryIssue;
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import dk.ifforsikring.sonarqube.gosu.plugin.rules.BaseGosuRule;
 import org.antlr.v4.runtime.Token;
 import org.sonar.check.Rule;
 import org.sonar.check.RuleProperty;
+
+import java.util.*;
 
 @Rule(key = UnusedParameterRule.KEY)
 public class UnusedParameterRule extends BaseGosuRule {

@@ -24,11 +24,6 @@ import dk.ifforsikring.sonarqube.gosu.plugin.reports.ReportsDirectories;
 import dk.ifforsikring.sonarqube.gosu.plugin.reports.ReportsScanner;
 import dk.ifforsikring.test.support.rules.dsl.gosu.GosuSourceCodeFile;
 import dk.ifforsikring.test.support.sonar.scanner.FileLinesContextFactorySpy;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.List;
-import java.util.Optional;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
@@ -39,6 +34,12 @@ import org.sonar.api.config.Configuration;
 import org.sonar.api.config.internal.MapSettings;
 import org.sonar.api.scan.filesystem.PathResolver;
 import org.sonar.plugins.surefire.data.UnitTestIndex;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+import java.util.Optional;
 
 public class GosuTestFileParser {
     private final GosuLexer gosuLexer = new GosuLexer(null);

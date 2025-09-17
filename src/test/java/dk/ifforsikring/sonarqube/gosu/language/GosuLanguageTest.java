@@ -16,9 +16,6 @@
  */
 package dk.ifforsikring.sonarqube.gosu.language;
 
-import java.util.stream.Stream;
-
-import dk.ifforsikring.sonarqube.gosu.language.GosuLanguage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -30,6 +27,7 @@ import org.sonar.api.config.internal.MapSettings;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 import static dk.ifforsikring.sonarqube.gosu.language.GosuLangProperties.FILE_SUFFIXES_KEY;
 import static org.assertj.core.api.Assertions.assertThat;

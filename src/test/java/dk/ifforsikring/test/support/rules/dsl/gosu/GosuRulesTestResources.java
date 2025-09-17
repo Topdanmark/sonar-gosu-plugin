@@ -17,6 +17,7 @@
 package dk.ifforsikring.test.support.rules.dsl.gosu;
 
 import dk.ifforsikring.test.support.TestResourcesDirectories;
+
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;

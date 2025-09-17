@@ -21,6 +21,7 @@ import dk.ifforsikring.sonarqube.gosu.antlr.GosuParserBaseListener;
 import dk.ifforsikring.sonarqube.gosu.plugin.issues.Issue;
 import dk.ifforsikring.sonarqube.gosu.plugin.issues.IssueCollector;
 import org.sonar.api.rule.RuleKey;
+
 import static dk.ifforsikring.sonarqube.gosu.language.GosuLanguage.REPOSITORY_KEY;
 
 /**

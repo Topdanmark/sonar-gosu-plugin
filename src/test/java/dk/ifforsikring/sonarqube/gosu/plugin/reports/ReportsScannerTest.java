@@ -16,17 +16,16 @@
  */
 package dk.ifforsikring.sonarqube.gosu.plugin.reports;
 
-import java.io.File;
-import java.util.List;
-
-import dk.ifforsikring.sonarqube.gosu.plugin.reports.ReportsDirectories;
-import dk.ifforsikring.sonarqube.gosu.plugin.reports.ReportsScanner;
 import org.junit.jupiter.api.Test;
 import org.sonar.api.batch.fs.internal.DefaultFileSystem;
 import org.sonar.api.config.Configuration;
 import org.sonar.api.config.internal.MapSettings;
 import org.sonar.api.scan.filesystem.PathResolver;
 import org.sonar.plugins.surefire.data.UnitTestIndex;
+
+import java.io.File;
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class ReportsScannerTest {

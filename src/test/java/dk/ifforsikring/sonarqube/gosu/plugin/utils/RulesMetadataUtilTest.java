@@ -16,7 +16,6 @@
  */
 package dk.ifforsikring.sonarqube.gosu.plugin.utils;
 
-import dk.ifforsikring.sonarqube.gosu.plugin.utils.RulesMetadataUtil;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 

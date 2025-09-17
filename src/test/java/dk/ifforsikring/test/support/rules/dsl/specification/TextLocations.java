@@ -16,8 +16,9 @@
  */
 package dk.ifforsikring.test.support.rules.dsl.specification;
 
-import java.util.List;
 import org.sonar.api.batch.fs.TextRange;
+
+import java.util.List;
 
 /**
  * The specific locations of a text in a Source file.

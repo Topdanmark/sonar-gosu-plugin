@@ -23,6 +23,7 @@ import dk.ifforsikring.sonarqube.gosu.plugin.rules.smells.MagicNumbersRule;
 import dk.ifforsikring.sonarqube.gosu.plugin.rules.smells.TODOsRule;
 import dk.ifforsikring.sonarqube.gosu.plugin.rules.vulnerabilities.PublicStaticFieldRule;
 import org.junit.jupiter.api.Test;
+
 import static dk.ifforsikring.test.support.rules.dsl.gosu.GosuRuleTestDsl.given;
 
 class SuppressWarningsListenerTest {

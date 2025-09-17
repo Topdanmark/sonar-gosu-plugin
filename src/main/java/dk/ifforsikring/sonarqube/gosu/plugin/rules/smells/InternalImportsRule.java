@@ -17,13 +17,14 @@
 package dk.ifforsikring.sonarqube.gosu.plugin.rules.smells;
 
 import dk.ifforsikring.sonarqube.gosu.antlr.GosuParser;
-import dk.ifforsikring.sonarqube.gosu.plugin.rules.BaseGosuRule;
 import dk.ifforsikring.sonarqube.gosu.plugin.issues.GosuIssue;
 import dk.ifforsikring.sonarqube.gosu.plugin.issues.SecondaryIssue;
-import java.util.ArrayList;
-import java.util.List;
+import dk.ifforsikring.sonarqube.gosu.plugin.rules.BaseGosuRule;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.sonar.check.Rule;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Rule(key = InternalImportsRule.KEY)
 public class InternalImportsRule extends BaseGosuRule {

@@ -20,10 +20,11 @@ import com.google.inject.Inject;
 import dk.ifforsikring.sonarqube.gosu.antlr.GosuParser;
 import dk.ifforsikring.sonarqube.gosu.language.utils.GosuUtil;
 import dk.ifforsikring.sonarqube.gosu.plugin.GosuFileProperties;
-import java.util.List;
 import org.antlr.v4.runtime.Token;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.measures.CoreMetrics;
+
+import java.util.List;
 
 /**
  * Implementation base on Sonarqube documentation:

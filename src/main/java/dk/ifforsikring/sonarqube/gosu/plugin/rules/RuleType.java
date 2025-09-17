@@ -16,11 +16,12 @@
  */
 package dk.ifforsikring.sonarqube.gosu.plugin.rules;
 
+import org.reflections.Reflections;
+import org.sonar.check.Rule;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
-import org.reflections.Reflections;
-import org.sonar.check.Rule;
 
 public enum RuleType {
     BUGS("bugs"),

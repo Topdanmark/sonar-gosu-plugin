@@ -18,9 +18,6 @@ package dk.ifforsikring.sonarqube.gosu.plugin.issues;
 
 import dk.ifforsikring.sonarqube.gosu.plugin.rules.BaseGosuRule;
 import dk.ifforsikring.sonarqube.gosu.plugin.utils.TextRangeUtil;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
 import org.sonar.api.batch.fs.InputFile;
@@ -29,6 +26,10 @@ import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.issue.NewIssue;
 import org.sonar.api.batch.sensor.issue.NewIssueLocation;
 import org.sonar.api.rule.RuleKey;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public final class GosuIssue implements Issue {
 

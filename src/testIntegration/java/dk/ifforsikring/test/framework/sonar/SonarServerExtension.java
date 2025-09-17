@@ -18,14 +18,11 @@ package dk.ifforsikring.test.framework.sonar;
 
 import dk.ifforsikring.test.framework.sonar.server.SonarServer;
 import dk.ifforsikring.test.framework.sonar.server.SonarServerConfig;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.junit.jupiter.api.extension.BeforeAllCallback;
-import org.junit.jupiter.api.extension.ExtensionContext;
-import org.junit.jupiter.api.extension.ParameterContext;
-import org.junit.jupiter.api.extension.ParameterResolutionException;
-import org.junit.jupiter.api.extension.ParameterResolver;
+import org.junit.jupiter.api.extension.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class SonarServerExtension implements BeforeAllCallback, ParameterResolver, AutoCloseable {
 

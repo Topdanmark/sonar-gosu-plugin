@@ -19,12 +19,13 @@ package dk.ifforsikring.sonarqube.gosu.plugin.measures.metrics;
 import dk.ifforsikring.sonarqube.gosu.antlr.GosuLexer;
 import dk.ifforsikring.sonarqube.gosu.antlr.GosuParserBaseListener;
 import dk.ifforsikring.sonarqube.gosu.plugin.GosuFileProperties;
+import org.sonar.api.batch.measure.Metric;
+import org.sonar.api.batch.sensor.SensorContext;
+
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-import org.sonar.api.batch.measure.Metric;
-import org.sonar.api.batch.sensor.SensorContext;
 
 public abstract class BaseMetric extends GosuParserBaseListener {
     private static final Set<Integer> GOSU_COMPLEXITY_OPERATORS = new HashSet<>(Arrays.asList(

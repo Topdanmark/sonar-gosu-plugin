@@ -17,11 +17,12 @@
 package dk.ifforsikring.sonarqube.gosu.plugin.rules.bugs;
 
 import dk.ifforsikring.sonarqube.gosu.antlr.GosuParser;
-import dk.ifforsikring.sonarqube.gosu.plugin.rules.BaseGosuRule;
 import dk.ifforsikring.sonarqube.gosu.plugin.issues.GosuIssue;
+import dk.ifforsikring.sonarqube.gosu.plugin.rules.BaseGosuRule;
+import org.sonar.check.Rule;
+
 import java.util.Arrays;
 import java.util.List;
-import org.sonar.check.Rule;
 
 @Rule(key = StringBuilderInstantiationRule.KEY)
 public class StringBuilderInstantiationRule extends BaseGosuRule {

@@ -18,15 +18,16 @@ package dk.ifforsikring.sonarqube.gosu.plugin.utils;
 
 import dk.ifforsikring.sonarqube.gosu.antlr.GosuLexer;
 import dk.ifforsikring.sonarqube.gosu.language.utils.GosuUtil;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-import java.util.regex.Pattern;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.TerminalNode;
 import org.sonar.api.batch.fs.TextPointer;
 import org.sonar.api.batch.fs.TextRange;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+import java.util.regex.Pattern;
 
 public final class TextRangeUtil {
     private static final Pattern LINE_SEPARATOR = Pattern.compile("\\r?\\n");

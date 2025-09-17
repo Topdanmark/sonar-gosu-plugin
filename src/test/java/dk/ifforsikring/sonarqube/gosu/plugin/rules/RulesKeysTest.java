@@ -16,12 +16,11 @@
  */
 package dk.ifforsikring.sonarqube.gosu.plugin.rules;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.HashMap;
 import java.util.Map;
 
-import dk.ifforsikring.sonarqube.gosu.plugin.rules.RuleType;
-import dk.ifforsikring.sonarqube.gosu.plugin.rules.RulesKeys;
-import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class RulesKeysTest {

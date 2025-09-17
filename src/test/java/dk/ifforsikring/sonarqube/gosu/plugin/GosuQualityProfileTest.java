@@ -17,12 +17,11 @@
 package dk.ifforsikring.sonarqube.gosu.plugin;
 
 import dk.ifforsikring.sonarqube.gosu.language.GosuLanguage;
-import dk.ifforsikring.sonarqube.gosu.plugin.GosuQualityProfile;
-import dk.ifforsikring.sonarqube.gosu.plugin.GosuRulesDefinition;
 import dk.ifforsikring.sonarqube.gosu.plugin.tools.reflections.RulesKeysExtractor;
 import org.junit.jupiter.api.Test;
 import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition.Context;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class GosuQualityProfileTest {

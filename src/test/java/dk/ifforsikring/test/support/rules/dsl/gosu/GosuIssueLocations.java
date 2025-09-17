@@ -17,11 +17,13 @@
 package dk.ifforsikring.test.support.rules.dsl.gosu;
 
 import dk.ifforsikring.test.support.rules.dsl.specification.TextLocations;
-import java.util.Arrays;
-import java.util.List;
 import org.sonar.api.batch.fs.TextRange;
 import org.sonar.api.batch.fs.internal.DefaultTextPointer;
 import org.sonar.api.batch.fs.internal.DefaultTextRange;
+
+import java.util.Arrays;
+import java.util.List;
+
 import static java.util.stream.Collectors.toList;
 
 public final class GosuIssueLocations implements TextLocations {

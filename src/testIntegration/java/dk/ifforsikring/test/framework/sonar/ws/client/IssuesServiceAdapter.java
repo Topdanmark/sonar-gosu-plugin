@@ -16,12 +16,13 @@
  */
 package dk.ifforsikring.test.framework.sonar.ws.client;
 
-import java.util.Collections;
-import java.util.List;
 import org.sonarqube.ws.Issues;
 import org.sonarqube.ws.client.WsConnector;
 import org.sonarqube.ws.client.issues.IssuesService;
 import org.sonarqube.ws.client.issues.SearchRequest;
+
+import java.util.Collections;
+import java.util.List;
 
 public class IssuesServiceAdapter extends IssuesService {
 

@@ -19,11 +19,12 @@ package dk.ifforsikring.sonarqube.gosu.plugin.rules.smells;
 import com.google.inject.Inject;
 import dk.ifforsikring.sonarqube.gosu.antlr.GosuParser;
 import dk.ifforsikring.sonarqube.gosu.plugin.GosuFileProperties;
-import dk.ifforsikring.sonarqube.gosu.plugin.rules.BaseGosuRule;
 import dk.ifforsikring.sonarqube.gosu.plugin.issues.GosuIssue;
-import java.util.List;
+import dk.ifforsikring.sonarqube.gosu.plugin.rules.BaseGosuRule;
 import org.antlr.v4.runtime.Token;
 import org.sonar.check.Rule;
+
+import java.util.List;
 
 @Rule(key = EmptyLineRule.KEY)
 public class EmptyLineRule extends BaseGosuRule {

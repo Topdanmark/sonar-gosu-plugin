@@ -17,15 +17,11 @@
 package dk.ifforsikring.sonarqube.gosu.plugin.issues;
 
 import com.google.inject.Inject;
-
 import dk.ifforsikring.sonarqube.gosu.plugin.tools.listeners.SuppressWarningsListener;
 import dk.ifforsikring.sonarqube.gosu.plugin.tools.reflections.RulesKeysExtractor;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 import org.sonar.api.batch.fs.TextRange;
+
+import java.util.*;
 
 public class IssueCollector {
     private static final String CODE_SMELLS_TAG = "code_smells";
