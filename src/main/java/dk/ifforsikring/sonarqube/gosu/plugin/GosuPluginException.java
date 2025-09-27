@@ -17,6 +17,7 @@
 package dk.ifforsikring.sonarqube.gosu.plugin;
 
 public class GosuPluginException extends RuntimeException {
+    @SuppressWarnings("unused")
     public GosuPluginException(String message) {
         super(message);
     }

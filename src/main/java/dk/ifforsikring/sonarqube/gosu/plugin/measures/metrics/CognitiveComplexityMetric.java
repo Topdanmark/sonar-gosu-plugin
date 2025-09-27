@@ -28,7 +28,7 @@ import java.util.List;
 
 /**
  * Implementation base on Sonarqube documentation:
- * https://www.sonarsource.com/docs/CognitiveComplexity.pdf
+ * <a href="https://www.sonarsource.com/docs/CognitiveComplexity.pdf">Cognitive Complexity</a>
  */
 public class CognitiveComplexityMetric extends BaseMetric {
     private int classComplexity;

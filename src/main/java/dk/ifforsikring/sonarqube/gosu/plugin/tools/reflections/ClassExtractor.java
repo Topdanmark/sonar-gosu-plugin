@@ -34,11 +34,9 @@ public final class ClassExtractor {
     static {
         final Reflections reflections = new Reflections("dk.ifforsikring.sonarqube.gosu.plugin.rules");
         final Set<Class<? extends BaseGosuRule>> allClasses = reflections.getSubTypesOf(BaseGosuRule.class);
-        final Map<String, Class<? extends BaseGosuRule>> keysToClasses = new HashMap<>();
 
         for (Class<? extends BaseGosuRule> ruleClass : allClasses) {
             final String key = ruleClass.getAnnotation(Rule.class).key();
-            keysToClasses.put(key, ruleClass);
             addRuleByScope(ruleClass, key);
         }
     }
@@ -47,7 +45,7 @@ public final class ClassExtractor {
         final Reflections reflections = new Reflections("dk.ifforsikring.sonarqube.gosu.plugin.measures");
         final Set<Class<? extends BaseMetric>> allClasses = reflections.getSubTypesOf(BaseMetric.class);
 
-        metrics = Collections.unmodifiableList(new ArrayList<>(allClasses));
+        metrics = List.copyOf(allClasses);
     }
 
     private ClassExtractor() {
@@ -71,7 +69,7 @@ public final class ClassExtractor {
     }
 
     public static Map<String, Class<? extends BaseGosuRule>> getRules() {
-        return Collections.unmodifiableMap(new HashMap<>(allRules));
+        return Map.copyOf(allRules);
     }
 
     public static List<Class<? extends BaseMetric>> getMetrics() {
@@ -79,13 +77,10 @@ public final class ClassExtractor {
     }
 
     public static Optional<Class<? extends BaseGosuRule>> getRuleForScope(String key, InputFile.Type type) {
-        switch (type) {
-            case MAIN:
-                return Optional.ofNullable(mainSourcesRules.get(key));
-            case TEST:
-                return Optional.ofNullable(testSourcesRules.get(key));
-            default:
-                return Optional.ofNullable(allRules.get(key));
-        }
+        return switch (type) {
+            case MAIN -> Optional.ofNullable(mainSourcesRules.get(key));
+            case TEST -> Optional.ofNullable(testSourcesRules.get(key));
+            default -> Optional.ofNullable(allRules.get(key));
+        };
     }
 }

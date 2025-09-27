@@ -32,7 +32,7 @@ public class InternalImportsRule extends BaseGosuRule {
     private static final String COM_GUIDEWIRE = "com.guidewire";
     private static final String INTERNAL = "internal";
 
-    private List<SecondaryIssue> internalImportsOccurrences = new ArrayList<>();
+    private final List<SecondaryIssue> internalImportsOccurrences = new ArrayList<>();
     private ParserRuleContext contextToHighlight;
 
     @Override

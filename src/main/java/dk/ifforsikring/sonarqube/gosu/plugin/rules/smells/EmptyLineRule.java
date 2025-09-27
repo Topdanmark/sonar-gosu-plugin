@@ -30,7 +30,7 @@ import java.util.List;
 public class EmptyLineRule extends BaseGosuRule {
     static final String KEY = "EmptyLineRule";
 
-    private GosuFileProperties gosuFileProperties;
+    private final GosuFileProperties gosuFileProperties;
 
     @Inject
     EmptyLineRule(GosuFileProperties gosuFileProperties) {

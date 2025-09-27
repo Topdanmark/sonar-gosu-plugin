@@ -36,15 +36,16 @@ public class MagicNumbersRule extends BaseGosuRule {
     static final String KEY = "MagicNumbersRule";
     private static final int TWO_LETTERS_SUFFIX_LENGTH = 2;
     private static final String DEFAULT_NUMBERS = "-1,0,1";
-    @SuppressWarnings("squid:S4784")
     private static final Pattern FLOATING_POINT_PATTERN = Pattern.compile("[+-]?([\\d]+)?[.]0+([a-zA-Z])?");
+
     @RuleProperty(
             key = "Authorized numbers",
             description = "Comma separated list of authorized numbers. Example: -1,0,1,2",
-            defaultValue = "" + DEFAULT_NUMBERS)
+            defaultValue = DEFAULT_NUMBERS)
     private String approvedNumbers = DEFAULT_NUMBERS;
+
     private IN_HASHCODE hashCodeFlag = IN_HASHCODE.FALSE;
-    private GosuFileProperties gosuFileProperties;
+    private final GosuFileProperties gosuFileProperties;
 
     @Inject
     MagicNumbersRule(GosuFileProperties gosuFileProperties) {
@@ -138,7 +139,7 @@ public class MagicNumbersRule extends BaseGosuRule {
     private String removeFloatingPoint(String literal) {
         if (FLOATING_POINT_PATTERN.matcher(literal).matches()) {
             literal = literal.substring(0, literal.indexOf('.'));
-            return literal.length() == 0 ? "0" : literal;
+            return literal.isEmpty() ? "0" : literal;
         }
         return literal;
     }

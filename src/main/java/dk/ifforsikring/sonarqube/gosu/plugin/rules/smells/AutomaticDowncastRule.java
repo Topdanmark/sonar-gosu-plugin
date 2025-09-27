@@ -29,7 +29,7 @@ import java.util.Map;
 @Rule(key = AutomaticDowncastRule.KEY)
 public class AutomaticDowncastRule extends BaseGosuRule {
     static final String KEY = "AutomaticDowncastRule";
-    private Map<String, String> castedVariables = new HashMap<>();
+    private final Map<String, String> castedVariables = new HashMap<>();
     private String ifKey = "";
     private String switchKey = "";
 
@@ -84,9 +84,7 @@ public class AutomaticDowncastRule extends BaseGosuRule {
     @Override
     public void exitAssignStatement(GosuParser.AssignStatementContext ctx) {
         String key = ctx.expression(0).getText();
-        if (castedVariables.containsKey(key)) {
-            castedVariables.remove(key);
-        }
+        castedVariables.remove(key);
     }
 
     @Override

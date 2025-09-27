@@ -27,7 +27,7 @@ import java.util.List;
 @Rule(key = CollectionIsEmptyRule.KEY)
 public class CollectionIsEmptyRule extends BaseGosuRule {
     static final String KEY = "CollectionIsEmptyRule";
-    private List<String> countingMethods = Arrays.asList(".getCount()", ".Count", ".size()", ".length", ".length()");
+    private final List<String> countingMethods = Arrays.asList(".getCount()", ".Count", ".size()", ".length", ".length()");
 
     @Override
     public void exitRelationalExpression(GosuParser.RelationalExpressionContext ctx) {

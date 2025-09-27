@@ -29,7 +29,7 @@ import java.util.Set;
 public class SameConditionsInIfRule extends BaseGosuRule {
     static final String KEY = "SameConditionsInIfRule";
     private int counter;
-    private HashMap<Integer, Set<String>> ifExpressions = new HashMap<>();
+    private final HashMap<Integer, Set<String>> ifExpressions = new HashMap<>();
 
     @Override
     public void enterIfStatement(GosuParser.IfStatementContext ctx) {

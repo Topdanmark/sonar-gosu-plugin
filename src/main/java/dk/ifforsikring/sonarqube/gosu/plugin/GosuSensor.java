@@ -101,7 +101,7 @@ public class GosuSensor implements Sensor {
     }
 
     private void startReport(ProgressReport report, Iterable<InputFile> inputFiles) {
-        report.start(() -> new Iterator<String>() {
+        report.start(() -> new Iterator<>() {
             final Iterator<InputFile> it = inputFiles.iterator();
 
             @Override
@@ -119,7 +119,7 @@ public class GosuSensor implements Sensor {
     private void scanFile(SensorContext sensorContext, InputFile inputFile) {
         final Optional<GosuFileParser> optionalParser = createParser(sensorContext, inputFile);
 
-        if (!optionalParser.isPresent()) {
+        if (optionalParser.isEmpty()) {
             return;
         }
 
@@ -140,7 +140,7 @@ public class GosuSensor implements Sensor {
                     .at(inputFile.newPointer(0, 0))
                     .message(e.getMessage())
                     .save();
-            LOG.error("Couldn't get input stream from file " + inputFile.filename(), e);
+            LOG.error("Couldn't get input stream from file {}", inputFile.filename(), e);
             return Optional.empty();
         }
     }

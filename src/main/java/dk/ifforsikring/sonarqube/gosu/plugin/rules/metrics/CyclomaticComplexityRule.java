@@ -39,14 +39,16 @@ public class CyclomaticComplexityRule extends BaseGosuRule {
     static final String KEY = "CyclomaticComplexityRule";
     private static final List<String> EXCLUDED_METHODS = Arrays.asList("equals", "hashCode");
     private static final int DEFAULT_METHOD_THRESHOLD = 10;
+
     @RuleProperty(
             key = "Threshold",
             description = "The maximum authorized complexity.",
             defaultValue = "" + DEFAULT_METHOD_THRESHOLD)
     private int methodThreshold = DEFAULT_METHOD_THRESHOLD;
-    private List<SecondaryIssue> secondaryIssuesList = new ArrayList<>();
-    private GosuFileProperties gosuFileProperties;
-    private CyclomaticComplexityMetric metric;
+
+    private final List<SecondaryIssue> secondaryIssuesList = new ArrayList<>();
+    private final GosuFileProperties gosuFileProperties;
+    private final CyclomaticComplexityMetric metric;
 
     @Inject
     CyclomaticComplexityRule(GosuFileProperties gosuFileProperties, CyclomaticComplexityMetric metric) {

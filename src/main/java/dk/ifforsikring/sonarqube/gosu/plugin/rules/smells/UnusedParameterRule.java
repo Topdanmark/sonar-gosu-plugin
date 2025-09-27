@@ -36,8 +36,8 @@ public class UnusedParameterRule extends BaseGosuRule {
     private static final boolean DEFAULT_ADD_ISSUE_IF_ANNOTATED = false;
     private static final List<String> approvedAnnotations = Arrays.asList("@SuppressWarning(\"unchecked\")", "@SuppressWarning(\"rawtypes\")");
     private final GosuFileProperties gosuFileProperties;
-    private Deque<Boolean> isInFinalClass = new ArrayDeque<>();
-    private Map<Integer, Set<String>> parameters = new HashMap<>();
+    private final Deque<Boolean> isInFinalClass = new ArrayDeque<>();
+    private final Map<Integer, Set<String>> parameters = new HashMap<>();
     private int nestedLevel = -1;
 
     @RuleProperty(
@@ -103,9 +103,7 @@ public class UnusedParameterRule extends BaseGosuRule {
     public void exitIdentifier(GosuParser.IdentifierContext ctx) {
         String identifier = ctx.getText();
         for (int i = nestedLevel; i >= 0; i--) {
-            if (parameters.get(i).contains(identifier)) {
-                parameters.get(i).remove(identifier);
-            }
+            parameters.get(i).remove(identifier);
         }
     }
 

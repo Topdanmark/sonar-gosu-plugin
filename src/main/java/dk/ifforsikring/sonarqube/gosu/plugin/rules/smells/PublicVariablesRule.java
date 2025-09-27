@@ -30,7 +30,7 @@ import java.util.List;
 public class PublicVariablesRule extends BaseGosuRule {
     static final String KEY = "PublicVariablesRule";
 
-    private GosuFileProperties gosuFileProperties;
+    private final GosuFileProperties gosuFileProperties;
 
     @Inject
     PublicVariablesRule(GosuFileProperties gosuFileProperties) {

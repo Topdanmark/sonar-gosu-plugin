@@ -51,7 +51,7 @@ public class StringBuilderInstantiationRule extends BaseGosuRule {
     }
 
     private static boolean isChar(GosuParser.ArgExpressionContext argExpressionContext) {
-        return argExpressionContext.getText().startsWith("\'");
+        return argExpressionContext.getText().startsWith("'");
     }
 
     @Override

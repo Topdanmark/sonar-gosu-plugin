@@ -80,7 +80,7 @@ public final class UsesStatement {
         return Objects.hash(uses);
     }
 
-    private final class ClassNameUnavailableException extends IllegalArgumentException {
+    private static final class ClassNameUnavailableException extends IllegalArgumentException {
         ClassNameUnavailableException(String usesStatement) {
             super("Could not determine the class name of the uses statement: " + usesStatement);
         }

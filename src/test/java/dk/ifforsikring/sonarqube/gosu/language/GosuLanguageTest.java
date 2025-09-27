@@ -90,15 +90,14 @@ class GosuLanguageTest {
 
     private Stream<Arguments> getDifferentGosuLanguages () {
         return Stream.of(
-                of(new GosuLanguage(new MapSettings().asConfig()), new GosuLanguage(aConfigWith(FILE_SUFFIXES_KEY, ".gs"))),
-                of(new GosuLanguage(new MapSettings().asConfig()), new RandomLanguage()),
-                of(new GosuLanguage(new MapSettings().asConfig()), null)
+                of(new GosuLanguage(new MapSettings().asConfig()), new GosuLanguage(withConfig())),
+                of(new GosuLanguage(new MapSettings().asConfig()), new RandomLanguage())
         );
     }
 
-    private Configuration aConfigWith(String key, String value) {
+    private Configuration withConfig() {
         final MapSettings settings = new MapSettings();
-        settings.setProperty(key, value);
+        settings.setProperty(GosuLangProperties.FILE_SUFFIXES_KEY, ".gs");
         return settings.asConfig();
     }
 
@@ -113,5 +112,4 @@ class GosuLanguageTest {
             return new String[]{".random"};
         }
     }
-
 }

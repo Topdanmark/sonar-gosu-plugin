@@ -36,11 +36,13 @@ public class LoggerRule extends BaseGosuRule {
     private static final String CLASS_SUFFIX = "\\.[Cc]lass";
     private static final Logger LOG = LoggerFactory.getLogger(LoggerRule.class);
     private static final Pattern MATCH_ALL_LOGGERS_PATTERN = Pattern.compile("\\w+");
+
     @RuleProperty(
             key = "format",
             description = "Regular expression used to check the logger names against.",
-            defaultValue = "" + DEFAULT_LOGGER_REGEX)
+            defaultValue = DEFAULT_LOGGER_REGEX)
     private String loggerRegex = DEFAULT_LOGGER_REGEX;
+
     private Pattern loggerPattern;
     private String className;
 
@@ -49,7 +51,7 @@ public class LoggerRule extends BaseGosuRule {
         try {
             loggerPattern = Pattern.compile(loggerRegex);
         } catch (PatternSyntaxException e) {
-            LOG.error("LoggerRule - wrong syntax of \"format\" property - " + loggerRegex, e);
+            LOG.error("LoggerRule - wrong syntax of \"format\" property - {}", loggerRegex, e);
             loggerPattern = MATCH_ALL_LOGGERS_PATTERN;
         }
     }
@@ -62,11 +64,10 @@ public class LoggerRule extends BaseGosuRule {
     @Override
     public void exitField(GosuParser.FieldContext ctx) {
         GosuParser.ExpressionContext expression = ctx.expression();
-        if (!(expression instanceof GosuParser.MemberAccessContext)
-                || !isMethodCall((GosuParser.MemberAccessContext) expression)) {
+        if (!(expression instanceof GosuParser.MemberAccessContext memberAccessContext)
+                || !isMethodCall(memberAccessContext)) {
             return;
         }
-        GosuParser.MemberAccessContext memberAccessContext = (GosuParser.MemberAccessContext) expression;
         GosuParser.MethodCallContext methodCallContext
                 = (GosuParser.MethodCallContext) memberAccessContext.expression(1);
 
@@ -121,11 +122,9 @@ public class LoggerRule extends BaseGosuRule {
     }
 
     private boolean isNameWithClassSuffix(GosuParser.ArgExpressionContext methodCallParameter) {
-        if (!(methodCallParameter.expression() instanceof GosuParser.MemberAccessContext)) {
+        if (!(methodCallParameter.expression() instanceof GosuParser.MemberAccessContext memberAccessContext)) {
             return false;
         }
-        GosuParser.MemberAccessContext memberAccessContext
-                = (GosuParser.MemberAccessContext) methodCallParameter.expression();
 
         if (!(memberAccessContext.expression(0) instanceof GosuParser.PrimaryExpressionContext)
                 || !(memberAccessContext.expression(1) instanceof GosuParser.PrimaryExpressionContext)) {

@@ -30,7 +30,7 @@ import java.util.Map;
 public class DefaultModifiersRule extends BaseGosuRule {
     static final String KEY = "DefaultModifiersRule";
     private boolean isInInterface;
-    private Map<Integer, Boolean> finalClasses = new HashMap<>();
+    private final Map<Integer, Boolean> finalClasses = new HashMap<>();
     private int nestedLevel = -1;
     private boolean isOuter = true;
 

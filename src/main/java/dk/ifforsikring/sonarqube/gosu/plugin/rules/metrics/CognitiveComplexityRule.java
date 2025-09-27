@@ -37,16 +37,16 @@ import java.util.List;
 public class CognitiveComplexityRule extends BaseGosuRule {
     static final String KEY = "CognitiveComplexityRule";
     private static final int DEFAULT_METHOD_THRESHOLD = 10;
+
     @RuleProperty(
             key = "Threshold",
             description = "The maximum authorized complexity.",
             defaultValue = "" + DEFAULT_METHOD_THRESHOLD)
     private int methodThreshold = DEFAULT_METHOD_THRESHOLD;
 
-    private List<SecondaryIssue> secondaryIssuesList = new ArrayList<>();
-
-    private CognitiveComplexityMetric metric;
-    private GosuFileProperties gosuFileProperties;
+    private final List<SecondaryIssue> secondaryIssuesList = new ArrayList<>();
+    private final CognitiveComplexityMetric metric;
+    private final GosuFileProperties gosuFileProperties;
 
     @Inject
     CognitiveComplexityRule(CognitiveComplexityMetric metric, GosuFileProperties gosuFileProperties) {

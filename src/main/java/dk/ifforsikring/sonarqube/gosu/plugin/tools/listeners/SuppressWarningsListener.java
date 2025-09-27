@@ -29,7 +29,7 @@ public final class SuppressWarningsListener extends GosuParserBaseListener {
     private static final String SUPPRESS_WARNINGS = "SuppressWarnings";
     private static final Pattern GOSU_SUPPRESS_WARNINGS_KEY_PATTERN = Pattern.compile("gosu:\\w+");
 
-    private Map<String, List<TextRange>> gosuSuppressWarningsMap = new HashMap<>();
+    private final Map<String, List<TextRange>> gosuSuppressWarningsMap = new HashMap<>();
 
     public Map<String, List<TextRange>> getSuppressWarnings() {
         return gosuSuppressWarningsMap;

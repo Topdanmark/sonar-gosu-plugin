@@ -24,6 +24,7 @@ import org.sonar.api.batch.fs.TextRange;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.util.Objects;
 
 public class SecondaryIssue implements Comparable<SecondaryIssue> {
     final TextRange range;
@@ -80,7 +81,7 @@ public class SecondaryIssue implements Comparable<SecondaryIssue> {
     }
 
     private boolean compareMessages(String otherMessage) {
-        return this.message == null ? otherMessage == null : this.message.equals(otherMessage);
+        return Objects.equals(this.message, otherMessage);
     }
 
     @Override

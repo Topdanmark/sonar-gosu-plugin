@@ -33,12 +33,14 @@ import java.util.List;
 public class NestedStatementsRule extends BaseGosuRule {
     static final String KEY = "NestedStatementsRule";
     private static final int DEFAULT_NESTED_LEVEL = 3;
+
     @RuleProperty(
             key = "Max",
             description = "Maximum allowed control flow statement nesting depth.",
             defaultValue = "" + DEFAULT_NESTED_LEVEL)
     private int maxNestedLevel = DEFAULT_NESTED_LEVEL;
-    private List<Pair<TerminalNode, Integer>> tree = new ArrayList<>();
+
+    private final List<Pair<TerminalNode, Integer>> tree = new ArrayList<>();
 
     private int nestedLevel;
 

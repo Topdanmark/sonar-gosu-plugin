@@ -19,9 +19,7 @@ package dk.ifforsikring.sonarqube.gosu.plugin.rules;
 import org.reflections.Reflections;
 import org.sonar.check.Rule;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public enum RuleType {
     BUGS("bugs"),
@@ -45,12 +43,9 @@ public enum RuleType {
     }
 
     public List<String> getRuleKeys() {
-        return Collections.unmodifiableList(
-                new Reflections(getRuleTypePackage())
-                        .getSubTypesOf(BaseGosuRule.class)
-                        .parallelStream()
-                        .map(checkClass -> checkClass.getAnnotation(Rule.class).key())
-                        .collect(Collectors.toList())
-        );
+        return new Reflections(getRuleTypePackage())
+                .getSubTypesOf(BaseGosuRule.class)
+                .parallelStream()
+                .map(checkClass -> checkClass.getAnnotation(Rule.class).key()).toList();
     }
 }

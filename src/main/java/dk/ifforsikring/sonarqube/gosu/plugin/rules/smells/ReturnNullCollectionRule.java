@@ -107,8 +107,8 @@ public class ReturnNullCollectionRule extends BaseGosuRule {
     }
 
     private static class ScopeTracker {
-        private Map<Integer, Boolean> methodsReturningCollection = new HashMap<>();
-        private Map<Integer, Set<String>> nullVariables = new HashMap<>();
+        private final Map<Integer, Boolean> methodsReturningCollection = new HashMap<>();
+        private final Map<Integer, Set<String>> nullVariables = new HashMap<>();
         private int nestedLevel = -1;
 
         void enterNewScope() {

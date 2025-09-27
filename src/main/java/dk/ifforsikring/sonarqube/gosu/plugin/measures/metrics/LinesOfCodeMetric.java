@@ -32,7 +32,7 @@ public class LinesOfCodeMetric extends BaseMetric {
 
     @Override
     public void exitStart(GosuParser.StartContext startContext) {
-        if(shouldSaveMetric()) {
+        if (shouldSaveMetric()) {
             final GosuFileLineData fileLineData = gosuFileProperties.getFileLineData();
             saveMetricOnContext(CoreMetrics.NCLOC, fileLineData.getNumberOfLinesOfCode());
             saveMetricOnContext(CoreMetrics.COMMENT_LINES, fileLineData.getNumberOfCommentedLines());

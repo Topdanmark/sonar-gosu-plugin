@@ -30,15 +30,14 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import static dk.ifforsikring.sonarqube.gosu.plugin.rules.smells.TODOsRule.KEY;
 
 @Rule(key = KEY)
 public class TODOsRule extends BaseGosuRule {
     static final String KEY = "TODOsRule";
-    private Set<Integer> commentTokens = new HashSet<>(Arrays.asList(GosuLexer.COMMENT, GosuLexer.LINE_COMMENT));
-    private GosuFileProperties gosuFileProperties;
+    private final Set<Integer> commentTokens = new HashSet<>(Arrays.asList(GosuLexer.COMMENT, GosuLexer.LINE_COMMENT));
+    private final GosuFileProperties gosuFileProperties;
 
     @Inject
     TODOsRule(GosuFileProperties gosuFileProperties) {
@@ -51,7 +50,7 @@ public class TODOsRule extends BaseGosuRule {
                 .getTokens()
                 .stream()
                 .filter(token -> commentTokens.contains(token.getType()))
-                .collect(Collectors.toList());
+                .toList();
 
         for (Token token : tokens) {
             if (Strings.CI.contains(token.getText(), "TODO")) {

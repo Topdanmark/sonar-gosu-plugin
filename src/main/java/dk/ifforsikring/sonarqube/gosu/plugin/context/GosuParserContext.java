@@ -112,7 +112,7 @@ public class GosuParserContext {
         final CheckFactory checkFactory = new CheckFactory(context.activeRules());
         final Checks<BaseGosuRule> checks = checkFactory.create(GosuLanguage.REPOSITORY_KEY);
 
-        return new ArrayList<>(checks.addAnnotatedChecks((Iterable) activeChecks).all());
+        return new ArrayList<>(checks.addAnnotatedChecks(activeChecks).all());
     }
 
     private void removeParserListeners() {

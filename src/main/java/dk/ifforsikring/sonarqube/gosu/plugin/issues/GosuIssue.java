@@ -83,7 +83,7 @@ public final class GosuIssue implements Issue {
         private TextRange textRange;
         private String message = "";
         private List<SecondaryIssue> secondaries = Collections.emptyList();
-        private RuleKey ruleKey;
+        private final RuleKey ruleKey;
         private int gap = -1;
 
         public GosuIssueBuilder(BaseGosuRule rule) {
@@ -104,6 +104,7 @@ public final class GosuIssue implements Issue {
             return this;
         }
 
+        @SuppressWarnings("unused")
         public GosuIssueBuilder onPosition(int startOffset, int stopOffset, int startLine, int stopLine) {
             this.textRange = TextRangeUtil.fromPosition(startLine, startOffset, stopLine, stopOffset);
             return this;

@@ -35,7 +35,7 @@ public final class RulesMetadataUtil {
         MAIN("Main"),
         TESTS("Tests");
 
-        private String text;
+        private final String text;
 
         Scope(String text) {
             this.text = text;
@@ -103,10 +103,6 @@ public final class RulesMetadataUtil {
         }
     }
 
-    /*
-     * SuppressWarnings - Field names should comply with a naming convention
-     */
-    @SuppressWarnings("squid:S00116")
     static class SecurityStandards {
         int[] CWE = {};
         String[] OWASP = {};

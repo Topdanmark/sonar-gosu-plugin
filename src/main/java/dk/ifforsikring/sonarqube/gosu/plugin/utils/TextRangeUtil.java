@@ -24,6 +24,7 @@ import org.antlr.v4.runtime.tree.TerminalNode;
 import org.sonar.api.batch.fs.TextPointer;
 import org.sonar.api.batch.fs.TextRange;
 
+import javax.annotation.Nonnull;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -110,25 +111,7 @@ public final class TextRangeUtil {
         }
     }
 
-    private static class InternalTextRange implements TextRange {
-
-        private final TextPointer start;
-        private final TextPointer end;
-
-        public InternalTextRange(TextPointer start, TextPointer end) {
-            this.start = start;
-            this.end = end;
-        }
-
-        @Override
-        public TextPointer start() {
-            return start;
-        }
-
-        @Override
-        public TextPointer end() {
-            return end;
-        }
+    private record InternalTextRange(TextPointer start, TextPointer end) implements TextRange {
 
         @Override
         public boolean overlap(TextRange another) {
@@ -136,16 +119,16 @@ public final class TextRangeUtil {
         }
 
         @Override
+        @Nonnull
         public String toString() {
             return "Range[from " + start + " to " + end + "]";
         }
 
         @Override
         public boolean equals(Object obj) {
-            if (!(obj instanceof TextRange)) {
+            if (!(obj instanceof TextRange other)) {
                 return false;
             }
-            final TextRange other = (TextRange) obj;
             return this.start.equals(other.start()) && this.end.equals(other.end());
         }
 
@@ -155,43 +138,20 @@ public final class TextRangeUtil {
         }
     }
 
-    private static class InternalTextPointer implements TextPointer {
-
-        private final int line;
-        private final int lineOffset;
-
-        public InternalTextPointer(int line, int lineOffset) {
-            this.line = line;
-            this.lineOffset = lineOffset;
-        }
+    private record InternalTextPointer(int line, int lineOffset) implements TextPointer {
 
         @Override
-        public int line() {
-            return line;
-        }
-
-        @Override
-        public int lineOffset() {
-            return lineOffset;
-        }
-
-        @Override
+        @Nonnull
         public String toString() {
             return "[line=" + line + ", lineOffset=" + lineOffset + "]";
         }
 
         @Override
         public boolean equals(Object obj) {
-            if (!(obj instanceof TextPointer)) {
+            if (!(obj instanceof TextPointer other)) {
                 return false;
             }
-            final TextPointer other = (TextPointer) obj;
             return other.line() == this.line && other.lineOffset() == this.lineOffset;
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(this.line, this.lineOffset);
         }
 
         @Override
