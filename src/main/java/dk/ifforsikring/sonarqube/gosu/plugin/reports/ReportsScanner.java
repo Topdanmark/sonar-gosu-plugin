@@ -60,7 +60,7 @@ public class ReportsScanner {
     private File[] getReports(File dir, boolean reportDirSetByUser) {
         if (!dir.isDirectory()) {
             if (reportDirSetByUser) {
-                LOGGER.error("Reports path not found or is not a directory: " + dir.getAbsolutePath());
+                LOGGER.error("Reports path not found or is not a directory: {}", dir.getAbsolutePath());
             }
             return new File[0];
         }
@@ -70,7 +70,7 @@ public class ReportsScanner {
             unitTestResultFiles = findXMLFilesStartingWith(dir, "TESTS-");
         }
         if (unitTestResultFiles.length == 0) {
-            LOGGER.warn("Reports path contains no files matching TEST-.*.xml : " + dir.getAbsolutePath());
+            LOGGER.warn("Reports path contains no files matching TEST-.*.xml : {}", dir.getAbsolutePath());
         }
         return unitTestResultFiles;
     }
@@ -90,7 +90,7 @@ public class ReportsScanner {
             try {
                 parser.parse(report);
             } catch (XMLStreamException e) {
-                LOGGER.error("Fail to parse the junit test report: " + report, e);
+                LOGGER.error("Fail to parse the junit test report: {}", report, e);
             }
         }
     }
