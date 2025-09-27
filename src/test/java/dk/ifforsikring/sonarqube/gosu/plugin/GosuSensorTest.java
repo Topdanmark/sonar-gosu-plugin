@@ -22,7 +22,6 @@ import dk.ifforsikring.test.support.TestResourcesDirectories;
 import dk.ifforsikring.test.support.rules.dsl.gosu.GosuSourceCodeFile;
 import dk.ifforsikring.test.support.rules.dsl.specification.SourceCodeFile;
 import dk.ifforsikring.test.support.sonar.scanner.FileLinesContextFactorySpy;
-import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.fs.TextPointer;
@@ -32,6 +31,7 @@ import org.sonar.api.batch.sensor.internal.DefaultSensorDescriptor;
 import org.sonar.api.batch.sensor.internal.SensorContextTester;
 import org.sonar.api.scan.filesystem.PathResolver;
 
+import javax.annotation.Nonnull;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -225,7 +225,7 @@ class GosuSensorTest {
         }
 
         @Override
-        public TextRange newRange(@NotNull TextPointer start, @NotNull TextPointer end) {
+        public TextRange newRange(@Nonnull TextPointer start, @Nonnull TextPointer end) {
             return null;
         }
 

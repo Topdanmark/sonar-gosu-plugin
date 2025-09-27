@@ -18,7 +18,6 @@ package dk.ifforsikring.test.support.sonar.scanner;
 
 import com.google.common.collect.ImmutableMap;
 import dk.ifforsikring.test.support.TestResourcesDirectories;
-import org.jetbrains.annotations.NotNull;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.internal.SensorContextTester;
@@ -28,6 +27,7 @@ import org.sonar.api.measures.FileLinesContextFactory;
 import org.sonar.api.measures.Metric;
 import org.sonar.api.utils.KeyValueFormat;
 
+import javax.annotation.Nonnull;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -46,7 +46,7 @@ public class FileLinesContextFactorySpy implements FileLinesContextFactory {
     }
 
     @Override
-    public FileLinesContext createFor(@NotNull InputFile inputFile) {
+    public FileLinesContext createFor(@Nonnull InputFile inputFile) {
         return new FilesLinesContextSpy(sensorContextTester, inputFile);
     }
 
@@ -63,12 +63,12 @@ public class FileLinesContextFactorySpy implements FileLinesContextFactory {
         }
 
         @Override
-        public void setIntValue(@NotNull String metricKey, int line, int value) {
+        public void setIntValue(@Nonnull String metricKey, int line, int value) {
             setValue(metricKey, line, value);
         }
 
         @Override
-        public void setStringValue(@NotNull String metricKey, int line, @NotNull String value) {
+        public void setStringValue(@Nonnull String metricKey, int line, @Nonnull String value) {
             setValue(metricKey, line, value);
         }
 
