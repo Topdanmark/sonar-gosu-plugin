@@ -68,7 +68,7 @@ class SecondaryIssueTest {
         assertThat(secondaryIssue0)
                 .hasSameHashCodeAs(secondaryIssue1)
                 .doesNotHaveSameHashCodeAs(secondaryIssue2)
-                .doesNotHaveSameHashCodeAs(secondaryIssue3);;
+                .doesNotHaveSameHashCodeAs(secondaryIssue3);
 
         assertThat(secondaryIssue4)
                 .hasSameHashCodeAs(secondaryIssue5)

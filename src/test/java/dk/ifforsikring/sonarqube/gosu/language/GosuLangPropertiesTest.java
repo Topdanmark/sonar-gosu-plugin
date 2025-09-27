@@ -20,6 +20,7 @@ import org.junit.jupiter.api.Test;
 import org.sonar.api.config.PropertyDefinition;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
 class GosuLangPropertiesTest {
 
     @Test

@@ -65,7 +65,7 @@ public final class GosuSourceCodeFile implements SourceCodeFile {
 
     private int numberLines() {
         final Path gosuFilePath = GosuRulesTestResources.getPathOf(fileName, baseDir);
-        int numberOfLines = 0;
+        int numberOfLines;
 
         try (Stream<String> lines = Files.lines(gosuFilePath)) {
             numberOfLines = Long.valueOf(lines.count()).intValue();
@@ -82,7 +82,6 @@ public final class GosuSourceCodeFile implements SourceCodeFile {
         try (Stream<String> lines = Files.lines(gosuFilePath)) {
             return lines.collect(Collectors.joining(System.lineSeparator()));
         } catch (IOException e) {
-            e.printStackTrace();
             throw new AssertionError("Unable to load Gosu source file at: " + gosuFilePath);
         }
     }

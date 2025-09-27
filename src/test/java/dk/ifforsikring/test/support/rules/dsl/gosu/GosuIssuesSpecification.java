@@ -34,7 +34,7 @@ final class GosuIssuesSpecification implements IssueSpecification {
     private final List<Issue> issues;
 
     public GosuIssuesSpecification(List<Issue> issues) {
-        Objects.requireNonNull(issues, "Issues can not be null");
+        Objects.requireNonNull(issues, "Issues cannot be null");
         this.issues = issues;
     }
 

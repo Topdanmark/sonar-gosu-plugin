@@ -30,10 +30,6 @@ final class GosuRulesTestResources {
         return BASE_DIR;
     }
 
-    static Path getPathOf(String gosuSourceFileName) {
-        return getPathOf(gosuSourceFileName, BASE_DIR.toFile().getPath());
-    }
-
     static Path getPathOf(String gosuSourceFileName, String baseDir) {
         return Paths.get(baseDir + File.separator + gosuSourceFileName);
     }

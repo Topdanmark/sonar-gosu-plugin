@@ -88,7 +88,7 @@ class GosuLanguageTest {
         assertThat(gosuLanguage1).isNotEqualTo(gosuLanguage2);
     }
 
-    private Stream<Arguments> getDifferentGosuLanguages () {
+    private Stream<Arguments> getDifferentGosuLanguages() {
         return Stream.of(
                 of(new GosuLanguage(new MapSettings().asConfig()), new GosuLanguage(withConfig())),
                 of(new GosuLanguage(new MapSettings().asConfig()), new RandomLanguage())

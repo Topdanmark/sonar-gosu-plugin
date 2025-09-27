@@ -34,7 +34,6 @@ class GosuPluginTest {
 
     @ParameterizedTest
     @EnumSource(SonarServerVersionSupported.class)
-    @SuppressWarnings("unchecked")
     void shouldAddGosuExtensionsToSonarServer(SonarServerVersionSupported sonarServerVersion) {
         // given
         final SonarRuntime runtime = SonarRuntimeImpl.forSonarQube(sonarServerVersion.getVersion(), SonarQubeSide.SERVER,

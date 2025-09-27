@@ -45,7 +45,7 @@ public final class GosuIssueLocations implements TextLocations {
     }
 
     @SafeVarargs
-    private final List<TextRange> from(List<Integer>... locations) {
+    private List<TextRange> from(List<Integer>... locations) {
         return Arrays.stream(locations).map(this::createTextRange).collect(toList());
     }
 

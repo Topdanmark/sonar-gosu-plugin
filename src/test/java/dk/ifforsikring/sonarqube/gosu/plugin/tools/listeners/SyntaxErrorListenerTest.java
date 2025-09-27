@@ -28,6 +28,7 @@ import org.sonar.api.batch.sensor.internal.SensorContextTester;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collections;
+import java.util.Objects;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -55,8 +56,8 @@ class SyntaxErrorListenerTest {
         assertThat(sensorContext.allAnalysisErrors()).hasSize(1).allSatisfy(analysisError -> {
             assertThat(analysisError.message()).isEqualTo("Syntax error");
             assertThat(analysisError.location()).isNotNull();
-            assertThat(analysisError.location().line()).isEqualTo(19);
-            assertThat(analysisError.location().lineOffset()).isEqualTo(7);
+            assertThat(Objects.requireNonNull(analysisError.location()).line()).isEqualTo(19);
+            assertThat(Objects.requireNonNull(analysisError.location()).lineOffset()).isEqualTo(7);
             assertThat(analysisError.inputFile()).isNotNull();
         });
 

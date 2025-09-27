@@ -72,7 +72,6 @@ final class GosuRuleTestRunner implements RuleRunner<List<Issue>> {
                     new FileLinesContextFactorySpy(context).createFor(inputFile)
             ).parse();
         } catch (IOException e) {
-            e.printStackTrace();
             throw new AssertionError("Unable to parse input file.");
         }
     }

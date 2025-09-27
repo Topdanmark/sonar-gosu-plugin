@@ -22,6 +22,7 @@ import dk.ifforsikring.test.support.TestResourcesDirectories;
 import dk.ifforsikring.test.support.rules.dsl.gosu.GosuSourceCodeFile;
 import dk.ifforsikring.test.support.rules.dsl.specification.SourceCodeFile;
 import dk.ifforsikring.test.support.sonar.scanner.FileLinesContextFactorySpy;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.fs.TextPointer;
@@ -38,6 +39,7 @@ import java.net.URI;
 import java.nio.charset.Charset;
 import java.nio.file.Path;
 import java.util.Collections;
+import java.util.Objects;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -115,9 +117,9 @@ class GosuSensorTest {
         assertThat(sensorContextTester.allAnalysisErrors()).hasSize(1).allSatisfy(
                 analysisError -> {
                     assertThat(analysisError.inputFile().filename()).isEqualTo(throwingInputFile.filename());
-                    assertThat(analysisError.location().line()).isZero();
-                    assertThat(analysisError.location().lineOffset()).isZero();
-                    assertThat(analysisError.message()).isEqualTo("Something exploded!!!");
+                    assertThat(Objects.requireNonNull(analysisError.location()).line()).isZero();
+                    assertThat(Objects.requireNonNull(analysisError.location()).lineOffset()).isZero();
+                    assertThat(analysisError.message()).isEqualTo("ThrowingInputFile exception");
                 }
         );
     }
@@ -150,32 +152,28 @@ class GosuSensorTest {
         return sensorContext;
     }
 
-    private class ThrowingInputFile implements InputFile {
+    private static class ThrowingInputFile implements InputFile {
 
         @Override
         public String filename() {
             return "throwing-input-file.gs";
         }
 
-        @SuppressWarnings("deprecation")
         @Override
         public String relativePath() {
             return null;
         }
 
-        @SuppressWarnings("deprecation")
         @Override
         public String absolutePath() {
             return null;
         }
 
-        @SuppressWarnings("deprecation")
         @Override
         public File file() {
             return null;
         }
 
-        @SuppressWarnings("deprecation")
         @Override
         public Path path() {
             return null;
@@ -198,11 +196,11 @@ class GosuSensorTest {
 
         @Override
         public InputStream inputStream() throws IOException {
-            throw new IOException("Something exploded!!!");
+            throw new IOException("ThrowingInputFile exception");
         }
 
         @Override
-        public String contents() throws IOException {
+        public String contents() {
             return null;
         }
 
@@ -227,7 +225,7 @@ class GosuSensorTest {
         }
 
         @Override
-        public TextRange newRange(TextPointer start, TextPointer end) {
+        public TextRange newRange(@NotNull TextPointer start, @NotNull TextPointer end) {
             return null;
         }
 

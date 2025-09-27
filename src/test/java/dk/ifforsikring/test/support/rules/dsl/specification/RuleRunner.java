@@ -17,7 +17,6 @@
 package dk.ifforsikring.test.support.rules.dsl.specification;
 
 /**
- *
  * Runs Sonarqube rules.
  *
  * @param <I> type returned by the Rule.
@@ -25,7 +24,6 @@ package dk.ifforsikring.test.support.rules.dsl.specification;
 public interface RuleRunner<I> {
 
     /**
-     *
      * Execute a Sonarqube Rule.
      *
      * @return output from the Rule execution.

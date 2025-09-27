@@ -63,7 +63,7 @@ public interface IssueSpecification {
 
     /**
      * Evaluate if there were no issues found by the Check.
-     *
+     * <p>
      * This is an end assertion.
      */
     void areEmpty();
@@ -74,6 +74,7 @@ public interface IssueSpecification {
      * <pre>
      * given("TODOsRule/ok.gs").whenCheckedAgainst(TODOsRule.class).then().issuesFound().hasSizeEqualTo(10);
      * </pre>
+     *
      * @return The Issue specification
      */
     IssueSpecification hasSizeEqualTo(int expectedNumberOfIssues);
@@ -88,6 +89,7 @@ public interface IssueSpecification {
      *      .issuesFound()
      *      .areLocatedOn(expectedTextLocations);
      * </pre>
+     *
      * @return The Issue specification
      */
     IssueSpecification areLocatedOn(TextLocations locations);
