@@ -77,7 +77,6 @@ class RulesKeysTest {
         codeSmells.put("InternalImportsRule", RuleType.CODE_SMELLS);
         codeSmells.put("InvertedBooleanExpressionsRule", RuleType.CODE_SMELLS);
         codeSmells.put("LoggerRule", RuleType.CODE_SMELLS);
-        codeSmells.put("LoggerLibraryRule", RuleType.CODE_SMELLS);
         codeSmells.put("MagicNumbersRule", RuleType.CODE_SMELLS);
         codeSmells.put("NestedStatementsRule", RuleType.CODE_SMELLS);
         codeSmells.put("PublicVariablesRule", RuleType.CODE_SMELLS);

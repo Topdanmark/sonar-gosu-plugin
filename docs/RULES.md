@@ -15,7 +15,6 @@ Follows a list of all the rules included on the plugin:
 - [InternalImportsRule](rules/InternalImportsRule.md)
 - [InvertedBooleanExpressionsRule](rules/InvertedBooleanExpressionsRule.md)
 - [LinesOfCodeRule](rules/LinesOfCodeRule.md)
-- [LoggerLibraryRule](rules/LoggerLibraryRule.md)
 - [LoggerRule](rules/LoggerRule.md)
 - [MagicNumbersRule](rules/MagicNumbersRule.md)
 - [NestedStatementsRule](rules/NestedStatementsRule.md)

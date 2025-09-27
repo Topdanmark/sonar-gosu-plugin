@@ -46,6 +46,7 @@ public class GosuSensorContextTester {
     private void activateRules(String ruleKey, SensorContextTester sensorContextTester, Map<String, String> ruleProperties) {
         NewActiveRule.Builder builder = new NewActiveRule.Builder().setRuleKey(RuleKey.of("gosu", ruleKey));
         ruleProperties.forEach(builder::setParam);
+        ruleProperties.forEach((key, value) -> System.out.println(ruleKey + " - RuleProperty[" + key + "," + value + "]"));
         NewActiveRule newActiveRule = builder.build();
         ActiveRulesBuilder activeRulesBuilder = new ActiveRulesBuilder().addRule(newActiveRule);
 

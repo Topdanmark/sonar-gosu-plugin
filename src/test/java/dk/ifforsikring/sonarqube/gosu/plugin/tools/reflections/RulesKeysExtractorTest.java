@@ -42,7 +42,7 @@ class RulesKeysExtractorTest {
         final Set<String> allRuleKeys = RulesKeysExtractor.getAllRulesKeys();
 
         // then
-        assertThat(allRuleKeys).isNotEmpty().hasSize(27);
+        assertThat(allRuleKeys).isNotEmpty().hasSize(26);
     }
 
 }

@@ -43,7 +43,7 @@ class RuleTypeTest {
     private Stream<Arguments> checkTypesAndRuleKeysCount() {
         return Stream.of(
                 arguments(RuleType.BUGS, 3),
-                arguments(RuleType.CODE_SMELLS, 19),
+                arguments(RuleType.CODE_SMELLS, 18),
                 arguments(RuleType.METRICS, 3),
                 arguments(RuleType.VULNERABILITIES, 2)
         );
