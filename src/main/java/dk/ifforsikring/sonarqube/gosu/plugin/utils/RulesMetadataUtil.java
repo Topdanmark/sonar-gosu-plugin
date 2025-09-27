@@ -19,8 +19,6 @@ package dk.ifforsikring.sonarqube.gosu.plugin.utils;
 import com.google.common.io.Resources;
 import com.google.gson.Gson;
 import dk.ifforsikring.sonarqube.gosu.language.GosuLanguage;
-import org.sonar.api.server.debt.DebtRemediationFunction;
-import org.sonar.api.server.rule.RulesDefinition;
 
 import javax.annotation.Nullable;
 import java.io.IOException;
@@ -80,49 +78,7 @@ public final class RulesMetadataUtil {
         }
     }
 
-    /*
-     * Static classes copied from SonarQube Java Plugin: RuleMetadata, SecurityStandards, Remediation
-     */
     static class RuleMetadata {
-        private static final String SECURITY_HOTSPOT = "SECURITY_HOTSPOT";
-
-        String title;
-        String status;
-        @Nullable
-        Remediation remediation;
-
-        String type;
-        String[] tags;
-        String defaultSeverity;
-        @Nullable
         String scope;
-        SecurityStandards securityStandards = new SecurityStandards();
-
-        boolean isSecurityHotspot() {
-            return SECURITY_HOTSPOT.equals(type);
-        }
-    }
-
-    static class SecurityStandards {
-        int[] CWE = {};
-        String[] OWASP = {};
-    }
-
-    static class Remediation {
-        String func;
-        String constantCost;
-        String linearDesc;
-        String linearOffset;
-        String linearFactor;
-
-        public DebtRemediationFunction remediationFunction(RulesDefinition.DebtRemediationFunctions drf) {
-            if (func.startsWith("Constant")) {
-                return drf.constantPerIssue(constantCost.replace("mn", "min"));
-            }
-            if ("Linear".equals(func)) {
-                return drf.linear(linearFactor.replace("mn", "min"));
-            }
-            return drf.linearWithOffset(linearFactor.replace("mn", "min"), linearOffset.replace("mn", "min"));
-        }
     }
 }
