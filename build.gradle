@@ -32,8 +32,6 @@ dependencies {
 
     testImplementation 'org.junit.jupiter:junit-jupiter:5.13.4'
 
-    testImplementation 'com.google.protobuf:protobuf-java-util:4.32.0'
-
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 

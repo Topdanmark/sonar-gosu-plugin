@@ -16,7 +16,6 @@
  */
 package dk.ifforsikring.test.framework.sonar.ws.client;
 
-import org.sonarqube.ws.Plugins;
 import org.sonarqube.ws.client.WsConnector;
 import org.sonarqube.ws.client.plugins.InstalledRequest;
 import org.sonarqube.ws.client.plugins.PluginsService;
@@ -27,13 +26,7 @@ public class PluginsServiceAdapter extends PluginsService {
         super(wsConnector);
     }
 
-    public Plugins.InstalledPluginsWsResponse allInstalledPlugins() {
-        return installedPlugins(new InstalledRequest());
+    public String allInstalledPlugins() {
+        return installed(new InstalledRequest());
     }
-
-    public Plugins.InstalledPluginsWsResponse installedPlugins(InstalledRequest request) {
-        return JsonToProtobufParser.from(this.installed(request))
-                .toMessage(Plugins.InstalledPluginsWsResponse.newBuilder());
-    }
-
 }

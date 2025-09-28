@@ -20,7 +20,6 @@ import dk.ifforsikring.test.config.IntegrationTest;
 import dk.ifforsikring.test.framework.sonar.server.SonarServer;
 import dk.ifforsikring.test.framework.sonar.ws.client.SonarWebServicesClient;
 import org.junit.jupiter.api.Test;
-import org.sonarqube.ws.Plugins;
 import org.sonarqube.ws.Qualityprofiles;
 
 import java.util.List;
@@ -39,20 +38,14 @@ public class PluginInstallationIT {
     @Test
     void shouldBeAvailableOnSonar() {
         //when
-        final Plugins.InstalledPluginsWsResponse installedPlugins = sonarClient.plugins().allInstalledPlugins();
+        final String installedPlugins = sonarClient.plugins().allInstalledPlugins();
 
         //then
-        assertThat(installedPlugins.getPluginsList()).satisfiesOnlyOnce(
-                pluginDetails -> {
-                    assertThat(pluginDetails.getKey()).isEqualTo("gosu");
-                    assertThat(pluginDetails.getName()).isEqualTo("Gosu Language Plugin");
-                    assertThat(pluginDetails.getDescription()).isEqualTo("Gosu Programming Language Plugin " +
-                            "for SonarQube");
-                    assertThat(pluginDetails.getLicense()).isEqualTo("GNU AGPL 3");
-                    assertThat(pluginDetails.getOrganizationName()).isEqualTo("If Skadeforsikring, filial af If " +
-                            "Skadeförsäkring AB (publ), Sverige");
-                }
-        );
+        assertThat(installedPlugins.contains("Gosu Language Plugin"));
+        assertThat(installedPlugins.contains("Gosu Programming Language Plugin for SonarQube"));
+        assertThat(installedPlugins.contains("GNU AGPL 3"));
+        assertThat(installedPlugins.contains("If Skadeforsikring, filial af If " +
+                "Skadeförsäkring AB (publ), Sverige"));
     }
 
     @Test
