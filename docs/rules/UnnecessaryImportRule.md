@@ -1,3 +1,1 @@
-Unused and useless imports should not occur.
-
-Those are just confusing and reduce readability.
+Unnecessary imports should be removed

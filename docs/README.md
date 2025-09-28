@@ -48,4 +48,4 @@ Check the table bellow for other warning suppressing configurations:
 
 ## Rules
 
-A list of all the rules included on the plugin is available [here](RULES.md).
+A list of all the rules included in the plugin is available [here](RULES.md).

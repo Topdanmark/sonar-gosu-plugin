@@ -23,10 +23,3 @@ Properties, functions and top-level types (outer Gosu classes, interfaces, enume
           /* ... */
       }
     }
-
-## See ##
-
- *  [Code Style Guide][] \- Default Modifiers
-
-
-[Code Style Guide]: https://friday-docs.k8s.blue.fridev.de/backend/code-style-guide/#default-modifiers
