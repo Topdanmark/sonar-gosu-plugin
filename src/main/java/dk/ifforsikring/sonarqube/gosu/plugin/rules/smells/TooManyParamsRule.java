@@ -36,14 +36,18 @@ public class TooManyParamsRule extends BaseGosuRule {
     private static final int CONSTRUCTOR_MAX = 7;
     private static final int METHOD_MAX = 7;
 
+    public static final String CONSTRUCTOR_MAX_KEY = "Constructor Max";
+
+    public static final String PARAMETER_MAX_KEY = "Parameter Max";
+
     @RuleProperty(
-            key = "Constructor Max",
+            key = CONSTRUCTOR_MAX_KEY,
             description = "Maximum authorized number of parameters for a constructor",
             defaultValue = "" + CONSTRUCTOR_MAX)
     private int maxForConstructor = CONSTRUCTOR_MAX;
 
     @RuleProperty(
-            key = "Max",
+            key = PARAMETER_MAX_KEY,
             description = "Maximum authorized number of parameters",
             defaultValue = "" + METHOD_MAX)
     private int maxForMethod = METHOD_MAX;

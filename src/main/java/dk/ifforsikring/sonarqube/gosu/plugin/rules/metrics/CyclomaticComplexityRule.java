@@ -40,9 +40,11 @@ public class CyclomaticComplexityRule extends BaseGosuRule {
     private static final List<String> EXCLUDED_METHODS = Arrays.asList("equals", "hashCode");
     private static final int DEFAULT_METHOD_THRESHOLD = 10;
 
+    public static final String METHOD_THRESHOLD_KEY = "Threshold";
+
     @RuleProperty(
-            key = "Threshold",
-            description = "The maximum authorized complexity.",
+            key = METHOD_THRESHOLD_KEY,
+            description = "The maximum authorized complexity",
             defaultValue = "" + DEFAULT_METHOD_THRESHOLD)
     private int methodThreshold = DEFAULT_METHOD_THRESHOLD;
 

@@ -31,9 +31,11 @@ public class LinesOfCodeRule extends BaseGosuRule {
     private static final int DEFAULT_MAX_NUMBER_OF_LINES = 500;
     private final GosuFileProperties gosuFileProperties;
 
+    public static final String MAX_LINES_KEY = "Max";
+
     @RuleProperty(
-            key = "Max",
-            description = "Maximum authorized lines in a file.",
+            key = MAX_LINES_KEY,
+            description = "Maximum authorized lines in a file",
             defaultValue = "" + DEFAULT_MAX_NUMBER_OF_LINES
     )
     private int maxNumberOfLines = DEFAULT_MAX_NUMBER_OF_LINES;

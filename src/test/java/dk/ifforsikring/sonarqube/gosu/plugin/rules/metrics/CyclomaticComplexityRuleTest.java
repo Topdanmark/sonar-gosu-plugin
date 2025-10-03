@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 FRIDAY Insurance S.A.
+ * Copyright (C) 2025 If Skadeforsikring, filial af If Skadeförsäkring AB (publ), Sverige.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published
@@ -18,6 +18,7 @@ package dk.ifforsikring.sonarqube.gosu.plugin.rules.metrics;
 
 import org.junit.jupiter.api.Test;
 
+import static dk.ifforsikring.sonarqube.gosu.plugin.rules.metrics.CyclomaticComplexityRule.METHOD_THRESHOLD_KEY;
 import static dk.ifforsikring.test.support.rules.dsl.gosu.GosuRuleTestDsl.given;
 
 class CyclomaticComplexityRuleTest {
@@ -67,6 +68,15 @@ class CyclomaticComplexityRuleTest {
                 .hasSizeEqualTo(12);
     }
 
+    @Test
+    void findsIssuesWhenComplexityIsAboveDefaultThresholdAndMethodThresholdIsEleven() {
+        given("CyclomaticComplexityRule/testAboveThreshold.gs")
+                .whenCheckedAgainst(CyclomaticComplexityRule.class)
+                .withRuleProperty(METHOD_THRESHOLD_KEY, "11")
+                .then()
+                .issuesFound()
+                .hasSizeEqualTo(0);
+    }
     @Test
     void findsIssuesWhenConstructorAndPropertiesComplexityAreAboveThreshold() {
         given("CyclomaticComplexityRule/constructorAndProperty.gs")

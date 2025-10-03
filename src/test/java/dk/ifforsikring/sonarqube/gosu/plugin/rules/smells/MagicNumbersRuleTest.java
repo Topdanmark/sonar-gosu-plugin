@@ -21,6 +21,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
+import static dk.ifforsikring.sonarqube.gosu.plugin.rules.smells.MagicNumbersRule.APPROVED_NUMBERS_KEY;
 import static dk.ifforsikring.test.support.rules.dsl.gosu.GosuRuleTestDsl.given;
 
 class MagicNumbersRuleTest {
@@ -52,10 +53,10 @@ class MagicNumbersRuleTest {
     }
 
     @Test
-    void findsIssuesWhenMagicNumbersAreFoundButPropertiesSet() {
+    void findsIssuesWhenMagicNumbersAreFoundButRulePropertyIsSet() {
         given("MagicNumbersRule/nok.gs")
                 .whenCheckedAgainst(MagicNumbersRule.class)
-                .withRuleProperty("Authorized numbers", "2,3,12")
+                .withRuleProperty(APPROVED_NUMBERS_KEY, "2,3,12")
                 .then().issuesFound().hasSizeEqualTo(4);
     }
 }

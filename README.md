@@ -1,5 +1,5 @@
 # SonarQube Gosu Plugin
-[![.github/workflows/build.yml](https://github.com/FRI-DAY/sonar-gosu-plugin/actions/workflows/build.yml/badge.svg)](https://github.com/FRI-DAY/sonar-gosu-plugin/actions/workflows/build.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=FRI-DAY_sonar-gosu-plugin&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=FRI-DAY_sonar-gosu-plugin) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=FRI-DAY_sonar-gosu-plugin&metric=coverage)](https://sonarcloud.io/summary/new_code?id=FRI-DAY_sonar-gosu-plugin) 
+[![.github/workflows/build.yml](https://github.com/Topdanmark/sonar-gosu-plugin/actions/workflows/build.yml/badge.svg)](https://github.com/Topdanmark/sonar-gosu-plugin/actions/workflows/build.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=If_sonar-gosu-plugin&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=If_sonar-gosu-plugin) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=If_sonar-gosu-plugin&metric=coverage)](https://sonarcloud.io/summary/new_code?id=FRI-DAY_sonar-gosu-plugin) 
 
 [Gosu Programming Language](https://gosu-lang.github.io/) Plugin for SonarQube.
 
@@ -331,11 +331,7 @@ $ docker container restart <SonarQube Container ID>
 ```
 #### Elasticsearch issue
 SonarQube has an embedded Elasticsearch instance. It might fail because of low memory:
-```log
-$ ERROR: [1] bootstrap checks failed. You must address the points described in the following [1] lines before starting Elasticsearch.
-$ bootstrap check failure [1] of [1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
-$ ERROR: Elasticsearch did not exit normally - check the logs at /opt/sonarqube/logs/sonarqube.log
-```
+
 Follow the instructions described [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html) and increase the `vm.max_map_count`.
 E.g.: `$ sysctl -w vm.max_map_count=262144`
 

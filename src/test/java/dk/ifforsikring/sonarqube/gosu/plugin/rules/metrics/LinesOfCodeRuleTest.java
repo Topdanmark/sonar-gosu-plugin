@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 FRIDAY Insurance S.A.
+ * Copyright (C) 2025 If Skadeforsikring, filial af If Skadeförsäkring AB (publ), Sverige.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published
@@ -18,6 +18,7 @@ package dk.ifforsikring.sonarqube.gosu.plugin.rules.metrics;
 
 import org.junit.jupiter.api.Test;
 
+import static dk.ifforsikring.sonarqube.gosu.plugin.rules.metrics.LinesOfCodeRule.MAX_LINES_KEY;
 import static dk.ifforsikring.test.support.rules.dsl.gosu.GosuRuleTestDsl.given;
 
 class LinesOfCodeRuleTest {
@@ -28,6 +29,16 @@ class LinesOfCodeRuleTest {
                 .then()
                 .issuesFound()
                 .hasSizeEqualTo(1);
+    }
+
+    @Test
+    void findsIssuesWhenLinesOfCodeAreAboveFiveHundredLinesAndMaxLinesIs501() {
+        given("LinesOfCodeRule/lines501.gs")
+                .whenCheckedAgainst(LinesOfCodeRule.class)
+                .withRuleProperty(MAX_LINES_KEY, "501")
+                .then()
+                .issuesFound()
+                .hasSizeEqualTo(0);
     }
 
     @Test

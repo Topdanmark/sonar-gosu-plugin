@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 FRIDAY Insurance S.A.
+ * Copyright (C) 2025 If Skadeforsikring, filial af If Skadeförsäkring AB (publ), Sverige.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published
@@ -21,6 +21,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
+import static dk.ifforsikring.sonarqube.gosu.plugin.rules.metrics.CognitiveComplexityRule.METHOD_THRESHOLD_KEY;
 import static dk.ifforsikring.test.support.rules.dsl.gosu.GosuRuleTestDsl.given;
 
 class CognitiveComplexityRuleTest {
@@ -48,6 +49,16 @@ class CognitiveComplexityRuleTest {
                                 Arrays.asList(35, 34, 35, 36)
                         )
                 );
+    }
+
+    @Test
+    void findsIssuesWhenGosuCodeHasHighCognitiveComplexityAndMethodThresholdIsSixteen() {
+        given("CognitiveComplexityRule/CognitiveComplexity.gs")
+                .whenCheckedAgainst(CognitiveComplexityRule.class)
+                .withRuleProperty(METHOD_THRESHOLD_KEY, "16")
+                .then()
+                .issuesFound()
+                .hasSizeEqualTo(0);
     }
 
     @Test

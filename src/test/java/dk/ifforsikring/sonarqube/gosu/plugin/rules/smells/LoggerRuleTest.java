@@ -18,6 +18,7 @@ package dk.ifforsikring.sonarqube.gosu.plugin.rules.smells;
 
 import org.junit.jupiter.api.Test;
 
+import static dk.ifforsikring.sonarqube.gosu.plugin.rules.smells.LoggerRule.LOGGER_REGEX_KEY;
 import static dk.ifforsikring.test.support.rules.dsl.gosu.GosuRuleTestDsl.given;
 
 class LoggerRuleTest {
@@ -27,6 +28,15 @@ class LoggerRuleTest {
         given("LoggerRule/ok.gs")
                 .whenCheckedAgainst(LoggerRule.class)
                 .then().issuesFound().areEmpty();
+    }
+
+
+    @Test
+    void findsIssueWhenLoggerIsInstantiatedCorrectlyButRulePropertyIsSet() {
+        given("LoggerRule/ok.gs")
+                .whenCheckedAgainst(LoggerRule.class)
+                .withRuleProperty(LOGGER_REGEX_KEY, "\"LOGGER\"")
+                .then().issuesFound().hasSizeEqualTo(1);
     }
 
     @Test

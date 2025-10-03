@@ -34,8 +34,10 @@ public class NestedStatementsRule extends BaseGosuRule {
     static final String KEY = "NestedStatementsRule";
     private static final int DEFAULT_NESTED_LEVEL = 3;
 
+    public static final String MAX_NESTING_KEY = "Max nesting depth";
+
     @RuleProperty(
-            key = "Max",
+            key = MAX_NESTING_KEY,
             description = "Maximum allowed control flow statement nesting depth.",
             defaultValue = "" + DEFAULT_NESTED_LEVEL)
     private int maxNestedLevel = DEFAULT_NESTED_LEVEL;

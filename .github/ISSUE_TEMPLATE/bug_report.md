@@ -24,9 +24,8 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Software Versions**
-
-- SonarQube Version: [e.g. Version 7.8 (build 26217)]
-- Plugin Version: [e.g. 1.0.0, or custom build from master at commit 004AD34FAA]
+- SonarQube Version: [e.g. Version 25.9]
+- Plugin Version: [e.g. 1.0.0]
 
 **Additional context**
 Add any other context about the problem here.

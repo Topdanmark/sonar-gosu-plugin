@@ -21,6 +21,8 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
 
+import static dk.ifforsikring.sonarqube.gosu.plugin.rules.smells.TooManyParamsRule.CONSTRUCTOR_MAX_KEY;
+import static dk.ifforsikring.sonarqube.gosu.plugin.rules.smells.TooManyParamsRule.PARAMETER_MAX_KEY;
 import static dk.ifforsikring.test.support.rules.dsl.gosu.GosuRuleTestDsl.given;
 
 class TooManyParamsRuleTest {
@@ -43,15 +45,15 @@ class TooManyParamsRuleTest {
     void findsIssuesInConstructorWhenNumberOfParametersIsAboveThreshold() {
         given("TooManyParamsRule/nok.gs")
                 .whenCheckedAgainst(TooManyParamsRule.class)
-                .withRuleProperty("Max", "100")
+                .withRuleProperty(PARAMETER_MAX_KEY, "100")
                 .then().issuesFound().hasSizeEqualTo(9);
     }
 
     @Test
     void findsNoIssuesInConstructorWhenNumberOfParametersIsAboveThreshold() {
         Map<String, String> ruleProperties = new HashMap<>();
-        ruleProperties.put("Max", "100");
-        ruleProperties.put("Constructor Max", "100");
+        ruleProperties.put(PARAMETER_MAX_KEY, "100");
+        ruleProperties.put(CONSTRUCTOR_MAX_KEY, "100");
         given("TooManyParamsRule/nok.gs")
                 .whenCheckedAgainst(TooManyParamsRule.class)
                 .withRuleProperties(ruleProperties)

@@ -38,9 +38,11 @@ public class CognitiveComplexityRule extends BaseGosuRule {
     static final String KEY = "CognitiveComplexityRule";
     private static final int DEFAULT_METHOD_THRESHOLD = 10;
 
+    public static final String METHOD_THRESHOLD_KEY = "Threshold";
+
     @RuleProperty(
-            key = "Threshold",
-            description = "The maximum authorized complexity.",
+            key = METHOD_THRESHOLD_KEY,
+            description = "The maximum authorized complexity",
             defaultValue = "" + DEFAULT_METHOD_THRESHOLD)
     private int methodThreshold = DEFAULT_METHOD_THRESHOLD;
 

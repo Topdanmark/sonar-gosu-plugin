@@ -37,9 +37,11 @@ public class LoggerRule extends BaseGosuRule {
     private static final Logger LOG = LoggerFactory.getLogger(LoggerRule.class);
     private static final Pattern MATCH_ALL_LOGGERS_PATTERN = Pattern.compile("\\w+");
 
+    public static final String LOGGER_REGEX_KEY = "Format";
+
     @RuleProperty(
-            key = "format",
-            description = "Regular expression used to check the logger names against.",
+            key = LOGGER_REGEX_KEY,
+            description = "Regular expression used to check the logger names against",
             defaultValue = DEFAULT_LOGGER_REGEX)
     private String loggerRegex = DEFAULT_LOGGER_REGEX;
 

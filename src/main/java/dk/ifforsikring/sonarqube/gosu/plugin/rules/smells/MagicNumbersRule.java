@@ -38,9 +38,11 @@ public class MagicNumbersRule extends BaseGosuRule {
     private static final String DEFAULT_NUMBERS = "-1,0,1";
     private static final Pattern FLOATING_POINT_PATTERN = Pattern.compile("[+-]?([\\d]+)?[.]0+([a-zA-Z])?");
 
+    public static final String APPROVED_NUMBERS_KEY = "Approved numbers";
+
     @RuleProperty(
-            key = "Authorized numbers",
-            description = "Comma separated list of authorized numbers. Example: -1,0,1,2",
+            key = APPROVED_NUMBERS_KEY,
+            description = "Comma separated list of approved numbers. Example: -1,0,1,2",
             defaultValue = DEFAULT_NUMBERS)
     private String approvedNumbers = DEFAULT_NUMBERS;
 
