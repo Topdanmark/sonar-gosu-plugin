@@ -341,7 +341,4 @@ The service should start normally after it has been restarted with the new confi
 ## Resources
 - [How to contribute to Open Source?](https://opensource.guide/how-to-contribute/);
 - [ANTLR4 Documentation](https://github.com/antlr/antlr4/blob/master/doc/index.md);
-- [Sonar Plugin basics](https://docs.sonarqube.org/9.6/extension-guide/developing-a-plugin/plugin-basics/);
-- [Write better commits, build better projects](https://github.blog/2022-06-30-write-better-commits-build-better-projects/);
-- [About Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests);
 

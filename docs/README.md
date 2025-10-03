@@ -21,7 +21,7 @@ The properties can be used as follows: `-Dsonar.jacoco.reportPath=build/jacoco/c
 
 ## Suppress Warnings
 
-The plugin supports warning suppressing for the following Gosu types:
+The plugin supports warning suppression for the following Gosu types:
 - `class`;
 - `enhancement`;
 - `enum`;
@@ -35,7 +35,7 @@ The plugin supports warning suppressing for the following Gosu types:
 To suppress warnings from Sonarqube Gosu Plugin Rules, use the following syntax `@SuppressWarnings("gosu:RULE_KEY")`. 
 This will suppress any issue found by the specified rule during the code analysis. 
 
-Check the table bellow for other warning suppressing configurations:
+Check the table bellow for other warning suppression configurations:
 
 | Suppress Key       | Description                                 | Example                                     |
 |--------------------|---------------------------------------------|---------------------------------------------|
