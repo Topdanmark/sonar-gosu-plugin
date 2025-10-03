@@ -36,6 +36,9 @@ jobs:
     - name: Build with Gradle Wrapper
       run: ./gradlew build
 
+    - name: Generate test coverage
+      run: ./gradlew test jacocoTestReport sonarqube
+
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
