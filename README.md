@@ -1,5 +1,5 @@
 # SonarQube Gosu Plugin
-[![.github/workflows/gradle.yml](https://github.com/Topdanmark/sonar-gosu-plugin/actions/workflows/gradle.yml/badge.svg)](https://github.com/Topdanmark/sonar-gosu-plugin/actions/workflows/build.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Topdanmark_sonar-gosu-plugin&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Topdanmark_sonar-gosu-plugin)
+[![.github/workflows/gradle.yml](https://github.com/Topdanmark/sonar-gosu-plugin/actions/workflows/gradle.yml/badge.svg)](https://github.com/Topdanmark/sonar-gosu-plugin/actions/workflows/gradle.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Topdanmark_sonar-gosu-plugin&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Topdanmark_sonar-gosu-plugin)
 
 [Gosu Programming Language](https://gosu-lang.github.io/) Plugin for SonarQube.
 
