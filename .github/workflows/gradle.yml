@@ -38,11 +38,6 @@ jobs:
     - name: Generate test coverage
       run: ./gradlew test jacocoTestReport
 
-    - name: SonarQube Scan
-      uses: SonarSource/sonarqube-scan-action@v6.0.0
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
