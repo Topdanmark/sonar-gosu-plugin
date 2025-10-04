@@ -4,8 +4,7 @@ These are the general steps to release a new version of the plugin:
 1. Check that the plugin version in `gradle.properties` does not contain any suffix, e.g. `SNAPSHOT`
 2. Update the `CHANGELOG.md` file
 3. Create a pull request with the changes
-4. Once the pull request is completed, the release workflow will build the release version, create the tag and create a 
-draft [Github release](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases) with the 
+4. Once the pull request is completed, create a tag and a draft [Github release](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases) with the 
 plugin JAR and change notes
 5. Review the draft GitHub release and, if everything is ok, release it
 
