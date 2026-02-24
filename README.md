@@ -6,9 +6,9 @@
 For plugin configurations and a list of all coding rules included in the plugin, see: [plugin documentation](docs/README.md).
 
 ## Compatibility
-| SonarQube Version | Plugin Version               |
-|-------------------|------------------------------|
-| v25+              | [1.0.0] |
+| SonarQube Version | Plugin Version |
+|-------------------|----------------|
+| v25+              | [1.0.1]        |
 
 ## Installation
 ### SonarQube Marketplace

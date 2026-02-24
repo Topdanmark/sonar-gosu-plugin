@@ -149,6 +149,12 @@ URSHIFT_ASSIGN : '>>>=';
 
 IDENTIFIER : Letter (Digit | Letter)* ;
 
+// Danish letters
+
+AE : 'æ';
+OE : 'ø';
+AA : 'å';
+
 NumberLiteral :  NAN                  |
                  INFINITY             |
                  HexLiteral           |
