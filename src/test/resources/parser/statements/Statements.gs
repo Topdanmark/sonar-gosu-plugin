@@ -124,6 +124,7 @@ class Statements {
     var c = b.replace(':', '-').replace('\\', '$').replace('/', '_')
     var d = "$"
     var e = '\\$'
+    var f = "æøåÆØÅ"
   }
 
   function advancedComments() {

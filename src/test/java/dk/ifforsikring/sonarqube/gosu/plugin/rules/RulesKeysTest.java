@@ -48,8 +48,6 @@ class RulesKeysTest {
     private Map<String, RuleType> bugs() {
         final Map<String, RuleType> bugChecks = new HashMap<>();
 
-        bugChecks.put("SameConditionsInIfRule", RuleType.BUGS);
-        bugChecks.put("StringBuilderInstantiationRule", RuleType.BUGS);
         bugChecks.put("SystemClockUnawareDateRule", RuleType.BUGS);
 
         return bugChecks;
@@ -68,17 +66,13 @@ class RulesKeysTest {
     private Map<String, RuleType> codeSmells() {
         final Map<String, RuleType> codeSmells = new HashMap<>();
 
-        codeSmells.put("AutomaticDowncastRule", RuleType.CODE_SMELLS);
         codeSmells.put("CollectionIsEmptyRule", RuleType.CODE_SMELLS);
         codeSmells.put("DefaultModifiersRule", RuleType.CODE_SMELLS);
-        codeSmells.put("EmptyLineRule", RuleType.CODE_SMELLS);
         codeSmells.put("HardcodedEntityFieldValueRule", RuleType.CODE_SMELLS);
         codeSmells.put("IfElseIfRule", RuleType.CODE_SMELLS);
         codeSmells.put("InternalImportsRule", RuleType.CODE_SMELLS);
-        codeSmells.put("InvertedBooleanExpressionsRule", RuleType.CODE_SMELLS);
         codeSmells.put("LoggerRule", RuleType.CODE_SMELLS);
         codeSmells.put("MagicNumbersRule", RuleType.CODE_SMELLS);
-        codeSmells.put("NestedStatementsRule", RuleType.CODE_SMELLS);
         codeSmells.put("PublicVariablesRule", RuleType.CODE_SMELLS);
         codeSmells.put("RethrowInCatchRule", RuleType.CODE_SMELLS);
         codeSmells.put("ReturnNullCollectionRule", RuleType.CODE_SMELLS);

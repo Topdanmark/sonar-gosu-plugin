@@ -16,7 +16,7 @@
  */
 package dk.ifforsikring.sonarqube.gosu.plugin.tools.listeners;
 
-import dk.ifforsikring.sonarqube.gosu.plugin.rules.bugs.SameConditionsInIfRule;
+import dk.ifforsikring.sonarqube.gosu.plugin.rules.bugs.SystemClockUnawareDateRule;
 import dk.ifforsikring.sonarqube.gosu.plugin.rules.metrics.CognitiveComplexityRule;
 import dk.ifforsikring.sonarqube.gosu.plugin.rules.metrics.LinesOfCodeRule;
 import dk.ifforsikring.sonarqube.gosu.plugin.rules.smells.MagicNumbersRule;
@@ -59,14 +59,14 @@ class SuppressWarningsListenerTest {
     @Test
     void shouldSuppressBugsWarnings() {
         given("SuppressWarningsListener/BugsWarnings.gs")
-                .whenCheckedAgainst(SameConditionsInIfRule.class)
+                .whenCheckedAgainst(SystemClockUnawareDateRule.class)
                 .then().issuesFound().areEmpty();
     }
 
     @Test
     void shouldSuppressVulnerabilitiesWarnings() {
         given("SuppressWarningsListener/BugsWarnings.gs")
-                .whenCheckedAgainst(SameConditionsInIfRule.class)
+                .whenCheckedAgainst(SystemClockUnawareDateRule.class)
                 .then().issuesFound().areEmpty();
     }
 

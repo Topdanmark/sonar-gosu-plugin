@@ -149,12 +149,6 @@ URSHIFT_ASSIGN : '>>>=';
 
 IDENTIFIER : Letter (Digit | Letter)* ;
 
-// Danish letters
-
-AE : 'æ';
-OE : 'ø';
-AA : 'å';
-
 NumberLiteral :  NAN                  |
                  INFINITY             |
                  HexLiteral           |
@@ -195,7 +189,7 @@ fragment
 IntegerTypeSuffix : ('l'|'L'|'s'|'S'|'bi'|'BI'|'b'|'B') ;
 
 fragment
-Letter : 'A' .. 'Z' | 'a' .. 'z' | '_' | '$' ;
+Letter : 'A' .. 'Z' | 'Æ' | 'Ø' | 'Å' | 'a' .. 'z' | 'æ' | 'ø' | 'å' | '_' | '$' ;
 
 fragment
 Digit : '0'..'9' ;
