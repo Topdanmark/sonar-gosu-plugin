@@ -7,7 +7,6 @@
 - [EmptyCatchRule](rules/EmptyCatchRule.md)
 - [EmptyLineRule](rules/EmptyLineRule.md)
 - [HardcodedEntityFieldValueRule](rules/HardcodedEntityFieldValueRule.md)
-- [IfElseIfRule](rules/IfElseIfRule.md)
 - [InternalImportsRule](rules/InternalImportsRule.md)
 - [InvertedBooleanExpressionsRule](rules/InvertedBooleanExpressionsRule.md)
 - [LinesOfCodeRule](rules/LinesOfCodeRule.md)

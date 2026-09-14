@@ -69,7 +69,6 @@ class RulesKeysTest {
         codeSmells.put("CollectionIsEmptyRule", RuleType.CODE_SMELLS);
         codeSmells.put("DefaultModifiersRule", RuleType.CODE_SMELLS);
         codeSmells.put("HardcodedEntityFieldValueRule", RuleType.CODE_SMELLS);
-        codeSmells.put("IfElseIfRule", RuleType.CODE_SMELLS);
         codeSmells.put("InternalImportsRule", RuleType.CODE_SMELLS);
         codeSmells.put("LoggerRule", RuleType.CODE_SMELLS);
         codeSmells.put("MagicNumbersRule", RuleType.CODE_SMELLS);
