@@ -45,13 +45,19 @@ generateGrammarSource {
 
 compileJava {
     options.encoding = 'UTF-8'
+    options.release = 21
     options.compilerArgs += ["-Xlint:deprecation", "-Xlint:none"]
     dependsOn generateGrammarSource
 }
 
 compileTestJava {
     options.encoding = 'UTF-8'
+    options.release = 21
     dependsOn generateTestGrammarSource
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 21
 }
 
 test {
@@ -167,7 +173,7 @@ jar {
                 'Plugin-RequiredForLanguages': 'gosu',
                 'Plugin-Organization': 'If Skadeforsikring, filial af If Skadeförsäkring AB (publ), Sverige',
                 'Plugin-OrganizationUrl': 'https://www.if.dk',
-                'Plugin-RequireJavaVersion': '17',
+                'Plugin-RequireJavaVersion': '21',
                 'Plugin-SourcesUrl': "${pluginRepositoryUrl}",
                 'Plugin-Version': "${pluginVersion}",
                 'SonarLint-Supported': 'true',
